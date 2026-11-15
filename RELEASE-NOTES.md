@@ -1,5 +1,31 @@
 # Release notes
 
+## 1.0.1 — 16 November 2026
+
+A shorter sign-up window, and "Published by SCAFFApps · www.scaffapps.com" in Settings.
+
+### Downloads
+
+| File | Size | SHA-256 |
+|---|---|---|
+| `SCAFFApps-Suite-Setup-1.0.1.exe` | 78.0 MB | `AE6C4181D457281CCBD715B325FAA6F2E3719CB0492EF08170566FED40C4B3A3` |
+
+For 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.
+
+### Changed
+
+- **The sign-up window** (your name and e-mail, asked once) ends with "Published by **SCAFFApps** · www.scaffapps.com", without the paragraph above it.
+- **Settings > About** reads "Published by **SCAFFApps** · www.scaffapps.com".
+
+### Updating from 1.0.0
+
+- **Update** on the Updates page (the Suite says when 1.0.1 is out). Windows asks for permission; the Suite closes, is updated and opens again.
+
+### Tested
+
+- The installed Suite 1.0.0, against a stand-in for GitHub offering the new versions, with its own buttons: updated Smart Snap 1.1.0 to 1.1.1 (open at the time: closed and opened again), Instant Share 1.3.2 to 1.3.3 and Multi Screens 1.8.0 to 1.8.1, each downloaded, checked against both checksums and installed with Windows' permission; then **updated itself** to 1.0.1: closed, installed, opened again, in 11 seconds. Windows lists all four new versions.
+- Microsoft Defender finds nothing in the installer. Settings > About in the new build: the line, SCAFFApps in bold.
+
 ## 1.0.0 — 16 November 2026
 
 The first release: one window for every SCAFFApps app.
