@@ -12,7 +12,8 @@ const { net } = require('electron');
 
 const SITE = 'https://www.scaffapps.com/api/releases/';
 const MIRROR = 'https://raw.githubusercontent.com/Rady193/scaffapps-suite/main/releases.json';
-let mirror = null;            // { at, data }: releases.json, kept a minute (the Suite asks for several apps at once)
+let mirror = null;            // { at, data: promise }: releases.json, kept a minute and shared by questions asked
+                              // together (the Suite asks for every app at once)
 
 async function getJson(url, agent, accept) {
   const res = await net.fetch(url, { headers: { Accept: accept || 'application/json', 'User-Agent': agent }, cache: 'no-store' });
@@ -26,10 +27,14 @@ async function fromSite(name, agent) {
 
 async function fromMirror(name, agent) {
   if (!mirror || Date.now() - mirror.at > 60_000) {
-    const { res, data } = await getJson(MIRROR, agent);
-    mirror = res.ok && data && data.repos ? { at: Date.now(), data } : null;
+    const data = getJson(MIRROR, agent).then(({ res, data: d }) => (res.ok && d && d.repos ? d : null));
+    const kept = { at: Date.now(), data };
+    mirror = kept;
+    const forget = () => { if (mirror === kept) mirror = null; };     // not kept when it did not answer
+    data.then((d) => { if (!d) forget(); }, forget);
   }
-  const r = mirror && mirror.data.repos[name];
+  const all = await mirror.data;
+  const r = all && all.repos[name];
   return r && r.tag_name ? r : null;
 }
 
