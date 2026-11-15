@@ -3,7 +3,7 @@
 One window for every SCAFFApps app. The Suite installs the apps, opens them, keeps them up to date, opens their
 handbooks, and keeps itself up to date the same way. It waits in the tray and can start with Windows.
 
-Version 1.0.1 · Windows 10 and 11 (64-bit) · Published by SCAFFApps
+Version 1.0.2 · Windows 10 and 11 (64-bit) · Published by SCAFFApps
 
 ## Contents
 
@@ -22,7 +22,7 @@ Version 1.0.1 · Windows 10 and 11 (64-bit) · Published by SCAFFApps
 
 ## Install
 
-Download `SCAFFApps-Suite-Setup-1.0.1.exe` from the [Releases page](https://github.com/Rady193/scaffapps-suite/releases/latest)
+Download `SCAFFApps-Suite-Setup-1.0.2.exe` from the [Releases page](https://github.com/Rady193/scaffapps-suite/releases/latest)
 and run it. It installs for everyone on the computer in `C:\Program Files\SCAFFApps\SCAFFApps Suite`, beside the apps
 it looks after, so Windows asks for administrator permission once. It adds a desktop shortcut and a Start menu
 shortcut in the **SCAFFApps** folder, and can be removed from Windows Settings like any program.

@@ -1,5 +1,35 @@
 # Release notes
 
+## 1.0.2 — 16 November 2026
+
+Its own handbook, scrollbars in the SCAFFApps colours, and a home view that fits a small laptop.
+
+### Downloads
+
+| File | Size | SHA-256 |
+|---|---|---|
+| `SCAFFApps-Suite-Setup-1.0.2.exe` | 78.0 MB | `84D9DEE414DB3EEAEBD0A1EDB2E15031E346EDE2A0FEEE2276DBA6911EF286DC` |
+| `SCAFFApps-Suite-Handbook-1.0.2.pdf` | 3.8 MB | `9E0A7C925B4E016CB5C77AE9458BA98655A24856992FFFFE2BC467D6F25BA237` |
+
+For 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.
+
+### Changed
+
+- **Its own handbook**, `SCAFFApps-Suite-Handbook-1.0.2.pdf`: 11 pages with pictures in the SCAFFApps brochure style. The apps' handbooks (Multi Screens 1.8.2, Smart Snap 1.1.2, Instant Share 1.3.4) are now on their releases, so **Handbooks** opens them.
+- **Scrollbars in the SCAFFApps style**: a slim purple bar on no track, wider under the pointer; never the grey Windows bar.
+- **The home view fits a small laptop** (1366 × 768) without scrolling.
+- **"Published by SCAFFApps - www.scaffapps.com"** in Settings > About and at the foot of the sign-up window.
+
+### Updating from 1.0.0 or 1.0.1
+
+- **Update** on the Updates page, or the Suite's card in the sidebar. Windows asks for permission; the Suite closes, is updated and opens again.
+
+### Tested
+
+- The installed Suite 1.0.1, against a stand-in for GitHub offering the new versions, updated Smart Snap, Instant Share and Multi Screens with its own buttons (each downloaded, checked against both published checksums and installed with Windows' permission, in 9 to 10 seconds), then **updated itself** to 1.0.2: closed, installed and opened again, in 10 seconds. Windows lists all four new versions.
+- Microsoft Defender finds nothing in the installer.
+- The handbook's pictures were taken from this version, in a test profile, with a stand-in for GitHub and a made-up list of installed apps.
+
 ## 1.0.1 — 16 November 2026
 
 A shorter sign-up window, and "Published by SCAFFApps · www.scaffapps.com" in Settings.
