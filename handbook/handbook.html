@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>SCAFFApps Suite Handbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=JetBrains+Mono:wght@400..800&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&display=block" rel="stylesheet">
+<link rel="stylesheet" href="brochure.css">
+<link rel="stylesheet" href="handbook.css">
+<!-- The SCAFFApps Suite handbook, in the SCAFFApps brochure style. The pictures (img/) are retaken by build_handbook.py
+     from the Suite itself, with a stand-in for GitHub and a made-up list of installed apps. -->
+</head>
+<body>
+
+<!-- =============================================================================================== cover -->
+<section class="page cover" id="cover">
+  <div class="grain"></div>
+  <div class="logo-c"><img src="img/app-icon.svg" alt=""></div>
+  <div class="ver">1.0</div>
+  <div class="lbl top"><span>SCAFFApps</span><span>/</span><span>SCAFFApps Suite</span><span class="dot">·</span><span>The handbook</span></div>
+  <div class="rule r1"></div>
+  <div class="band"></div><div class="band-foot"></div>
+  <div class="bigword"><div class="w ink">SUIT<em>E</em></div><div class="w lit">SUIT<em>E</em></div><div class="sel"><b></b><b></b><b></b><b></b></div></div>
+  <div class="ruler" aria-hidden="true"></div>
+  <div class="head">
+    <div class="sticker"><h1>Every app.<br><em>One window.</em></h1></div>
+    <p>Install, open and update every SCAFFApps app from one place, read their handbooks, and let the Suite keep itself up to date too.</p>
+  </div>
+  <div class="concrete"></div>
+  <div class="shot app"><img src="img/view-home.png" alt=""></div>
+  <div class="lines">
+    <div><a href="#install"></a><b>Install and start</b><span>One installer, your name once</span></div>
+    <div><a href="#home"></a><b>The home view</b><span>Every app on its scaffold</span></div>
+    <div><a href="#apps"></a><b>Installing and updating</b><span>Checked twice, then installed</span></div>
+    <div><a href="#updates"></a><b>Updating the Suite</b><span>The same way, by itself</span></div>
+    <div><a href="#books"></a><b>Handbooks</b><span>Each app's guide, one click away</span></div>
+    <div><a href="#help"></a><b>What is sent, and help</b><span>Nothing hidden</span></div>
+  </div>
+  <div class="foot">
+    <img class="lgh" src="img/logo-h.svg" alt="SCAFFApps">
+    <div class="grow"></div>
+    <div class="contact"><div class="ct">Contact us</div><div class="mail">info@scaffapps.com</div></div>
+    <div class="qr"><img src="img/qr.png" alt="QR code for www.scaffapps.com"><i></i><i></i><i></i><i></i></div>
+  </div>
+</section>
+
+<!-- =============================================================================================== contents and welcome -->
+<section class="page" id="contents">
+  <div class="grain"></div>
+  <div class="pad" style="flex-direction: row; gap: 10mm">
+    <div style="width: 74mm; display: flex; flex-direction: column; gap: 4mm">
+      <div class="kicker">Inside</div>
+      <h1>Contents</h1>
+      <div class="toc">
+        <a href="#install"><span class="n"></span><span><b>Install and start</b><span>The installer · your name, once · the tray</span></span></a>
+        <a href="#window"><span class="n"></span><span><b>The window at a glance</b><span>The five views · search · appearance</span></span></a>
+        <a href="#home"><span class="n"></span><span><b>The home view</b><span>The scaffold · the cards · what's new</span></span></a>
+        <a href="#apps"><span class="n"></span><span><b>Installing and updating apps</b><span>Checked twice · Update all</span></span></a>
+        <a href="#updates"><span class="n"></span><span><b>Updates, and the Suite's own</b><span>The updates view · updating the Suite</span></span></a>
+        <a href="#books"><span class="n"></span><span><b>Handbooks</b><span>Each app's guide, with pictures</span></span></a>
+        <a href="#settings"><span class="n"></span><span><b>Settings</b><span>Checks · notifications · start with Windows · appearance</span></span></a>
+        <a href="#help"><span class="n"></span><span><b>What is sent, and help</b><span>Over the internet · if something is not right</span></span></a>
+      </div>
+    </div>
+    <div class="grow" style="display: flex; flex-direction: column; gap: 4.5mm">
+      <div class="kicker">Welcome</div>
+      <h2>Your tools, <em>looked after.</em></h2>
+      <div class="letter">
+        <p class="first">The SCAFFApps Suite is one window for every SCAFFApps app. It shows which apps you have and which you do not, installs them, opens them, and keeps them up to date: you never have to look for a new version yourself.</p>
+        <p>Every download is <b>checked twice</b> before anything is installed, against the checksum GitHub works out for the file and the one published in its release notes. If they do not agree, nothing happens.</p>
+        <p>The Suite opens each app's <b>handbook</b>, like this one, and keeps <b>itself</b> up to date the same way. It waits in the tray, starts with Windows if you like, and tells you when an update is ready.</p>
+        <p>New SCAFFApps apps appear in it by themselves, without updating the Suite.</p>
+        <p class="serif" style="font-style: italic; font-size: 11pt; color: var(--purple); margin-top: 3mm">The SCAFFApps team</p>
+      </div>
+      <figure style="margin-top: auto"><div class="shot" style="height: 62mm"><img src="img/view-home-light.png" alt=""></div>
+        <figcaption><b>The light appearance:</b> the sun or moon button in the title bar switches it.</figcaption></figure>
+    </div>
+  </div>
+  <div class="folio"><span>SCAFFApps Suite handbook · Version 1.0</span><span class="n"></span></div>
+</section>
+
+<!-- =============================================================================================== install and start -->
+<section class="page" id="install">
+  <div class="tab" style="--c: #5b2c83; --on: #f3f0ea"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/></svg></i><b>INSTALL</b></div>
+  <div class="grain"></div>
+  <div class="pad">
+    <div class="hd">
+      <div class="kicker">Chapter 01 · Getting started</div>
+      <h1>Install it once. <em>It does the rest.</em></h1>
+      <p class="lede">One installer, for 64-bit Windows 10 and 11. The Suite installs for everyone on the computer, beside the apps it looks after, with its shortcut in the Start menu's <b>SCAFFApps</b> folder.</p>
+    </div>
+    <ol class="hsteps c4">
+      <li><span><b>Download</b>SCAFFApps-Suite-Setup-1.0.x.exe from its Releases page.</span></li>
+      <li><span><b>Install</b>Windows asks for permission once.</span></li>
+      <li><span><b>Your name, once</b>Name and e-mail, both required. The Suite and every SCAFFApps app on the Windows account share them.</span></li>
+      <li><span><b>It waits in the tray</b>Closing the window keeps it there, ready to tell you about updates.</span></li>
+    </ol>
+    <div class="split w">
+      <figure><div class="shot fit dark-bg"><img src="img/signup.png" alt=""></div>
+        <figcaption><b>The first start:</b> your name and e-mail address, asked once on each Windows account.</figcaption></figure>
+      <div class="stack">
+        <div>
+          <h3 class="sub-h">The first start</h3>
+          <p class="note-p">The first SCAFFApps app to start on a Windows account asks for your <b>name</b> and <b>e-mail address</b>. Both are required: closing the window without them closes the app. You are asked once; the Suite and the other SCAFFApps apps use the same details. What is sent, and to whom, is in the last chapter.</p>
+        </div>
+        <div>
+          <h3 class="sub-h">In the tray</h3>
+          <p class="note-p">The Suite waits in the tray, by the clock, and can start with Windows, hidden (Settings). Click its icon to open the window; right-click it for the menu, which also has Quit.</p>
+        </div>
+        <div class="gtk">
+          <h3>Good to know</h3>
+          <ul class="ticks">
+            <li><b>"Windows protected your PC"</b> may show the first time: the installer is not code-signed. Choose <b>More info</b>, then <b>Run anyway</b>.</li>
+            <li><b>Check a download:</b> the release notes list the installer's SHA-256, for <b>Get-FileHash</b> in PowerShell.</li>
+            <li><b>Remove it</b> from Windows Settings, Apps, like any program. The apps stay.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>SCAFFApps Suite handbook · Install and start</span><span class="n"></span></div>
+</section>
+
+<!-- =============================================================================================== the window -->
+<section class="page" id="window">
+  <div class="tab" style="--c: #141414; --on: #f3f0ea"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></svg></i><b>WINDOW</b></div>
+  <div class="grain"></div>
+  <div class="pad">
+    <div class="hd">
+      <div class="kicker">Chapter 02 · The window at a glance</div>
+      <h1>Five views. <em>One sidebar.</em></h1>
+      <p class="lede">The sidebar leads to the five views, with the number of updates waiting; at its foot, the Suite's own card says whether the Suite itself is up to date.</p>
+    </div>
+    <figure class="fill"><div class="shot dark-bg"><img src="img/view-home.png" alt=""></div>
+      <figcaption><b>The home view,</b> with an update ready for Multi Screens, Smart Snap up to date and Instant Share not yet installed.</figcaption></figure>
+    <table class="tbl tight">
+      <tr><th>View</th><th>What it shows</th></tr>
+      <tr><td>Home</td><td>The scaffold, with each app in its own bay; a card for every app; what's new and the handbooks (next chapter).</td></tr>
+      <tr><td>My apps</td><td>Every SCAFFApps app, its version, and whether it is running.</td></tr>
+      <tr><td>Updates</td><td>The Suite itself and each app: the version you have, the newest one, and its release notes.</td></tr>
+      <tr><td>Handbooks</td><td>Each app's handbook, a PDF with pictures.</td></tr>
+      <tr><td>Settings</td><td>Update checks, notifications, starting with Windows, the appearance, and who it is registered to.</td></tr>
+    </table>
+    <p class="note-p">The sun or moon button in the title bar switches between dark and light; <kbd>Ctrl</kbd> + <kbd>K</kbd> searches the apps.</p>
+  </div>
+  <div class="folio"><span>SCAFFApps Suite handbook · The window at a glance</span><span class="n"></span></div>
+</section>
+
+<!-- =============================================================================================== home -->
+<section class="page" id="home">
+  <div class="tab" style="--c: #f0c33c; --on: #141414"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9M21 21V9M3 9h18M3 15h18M12 9v12"/><path d="M8 4h8l2 5H6z"/></svg></i><b>HOME</b></div>
+  <div class="grain"></div>
+  <div class="pad">
+    <div class="hd">
+      <div class="kicker">Chapter 03 · The home view</div>
+      <h1>Every app <em>on its scaffold.</em></h1>
+      <p class="lede">The scaffold shows each app in its own bay; an app that is not installed is faded. The tag on it says whether updates are ready, and the button beside it updates them.</p>
+    </div>
+    <figure><div class="shot fit dark-bg"><img src="img/hero.png" alt=""></div>
+      <figcaption><b>The scaffold:</b> each app in its bay; the tag says one update is ready, and <b>Update Multi Screens</b> does it.</figcaption></figure>
+    <figure><div class="shot fit dark-bg"><img src="img/cards.png" alt=""></div>
+      <figcaption><b>A card for every app:</b> Open; Update when a newer version is out (its version in gold); Install when it is not on this computer. The last card keeps a place for the apps still to come.</figcaption></figure>
+    <div class="split">
+      <figure><div class="shot fit dark-bg"><img src="img/card-menu.png" alt=""></div>
+        <figcaption><b>The ⋯ menu</b> on a card.</figcaption></figure>
+      <div class="stack">
+        <table class="tbl tight">
+          <tr><th>In the ⋯ menu</th><th>What it does</th></tr>
+          <tr><td>Open</td><td>Opens the app (Install, when it is not installed).</td></tr>
+          <tr><td>Release notes</td><td>The app's newest release, on GitHub.</td></tr>
+          <tr><td>Handbook</td><td>Opens its handbook.</td></tr>
+          <tr><td>Open its folder</td><td>Shows where the app is.</td></tr>
+          <tr><td>Uninstall…</td><td>Removes it, after asking; Windows asks for permission.</td></tr>
+        </table>
+        <div class="gtk">
+          <h3>Under the cards</h3>
+          <ul class="ticks">
+            <li><b>What's new</b> lists each app's latest release, with its first line.</li>
+            <li><b>Handbooks</b> opens each app's guide.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>SCAFFApps Suite handbook · The home view</span><span class="n"></span></div>
+</section>
+
+<!-- =============================================================================================== installing and updating apps -->
+<section class="page" id="apps">
+  <div class="tab" style="--c: #5b2c83; --on: #f3f0ea"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></i><b>APPS</b></div>
+  <div class="grain"></div>
+  <div class="pad">
+    <div class="hd">
+      <div class="kicker">Chapter 04 · Installing and updating apps</div>
+      <h1>Checked twice. <em>Then installed.</em></h1>
+      <p class="lede"><b>Install</b> or <b>Update</b> downloads the app's installer from its GitHub Releases page, checks it, and installs it, without the installer's pages. The app's own settings and saved files are kept.</p>
+    </div>
+    <ol class="hsteps c4">
+      <li><span><b>Downloaded and checked</b>Against two published SHA-256 checksums: GitHub's own for the file, and the one in the release notes. They must agree.</span></li>
+      <li><span><b>Closed, if open</b>The app is closed first; its card says so.</span></li>
+      <li><span><b>Installed</b>Windows asks for permission. The app goes beside the others, with its shortcut in the Start menu's SCAFFApps folder.</span></li>
+      <li><span><b>Opened again</b>If it was open, it opens again, now the new version.</span></li>
+    </ol>
+    <figure class="fill"><div class="shot dark-bg"><img src="img/view-home-light.png" alt=""></div>
+      <figcaption><b>Update Multi Screens,</b> by the scaffold; <b>Update</b> on its card does the same. (The light appearance.)</figcaption></figure>
+    <div class="split">
+      <div class="gtk gold">
+        <h3>A file that does not match</h3>
+        <p class="note-p" style="font-size: 8.3pt">is thrown away, and nothing is installed. The card says why. Try again later; if it keeps happening, tell SCAFFApps.</p>
+      </div>
+      <div class="gtk">
+        <h3>Update all</h3>
+        <p class="note-p" style="font-size: 8.3pt">On the updates view, it updates every app with an update, one after another. Each app can also update itself from its own Settings: the Suite and the app use the same release files.</p>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>SCAFFApps Suite handbook · Installing and updating apps</span><span class="n"></span></div>
+</section>
+
+<!-- =============================================================================================== updates and the suite's own -->
+<section class="page dark" id="updates">
+  <div class="tab" style="--c: #5b2c83; --on: #f3f0ea"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5" /></svg></i><b>UPDATE</b></div>
+  <div class="grain"></div>
+  <div class="pad">
+    <div class="hd">
+      <div class="kicker">Chapter 05 · Updates, and the Suite's own</div>
+      <h1>Always the newest. <em>The Suite too.</em></h1>
+      <p class="lede">The Suite checks the apps' Releases pages, and its own, when it starts and once a day while it runs. A Windows notification says so once when an update is ready.</p>
+    </div>
+    <figure class="fill"><div class="shot dark-bg"><img src="img/view-updates.png" alt=""></div>
+      <figcaption><b>The updates view:</b> the Suite itself on top, then each app, with the version you have, the newest one and its notes. The versions shown are an example.</figcaption></figure>
+    <div class="split n">
+      <figure><div class="shot fit dark-bg"><img src="img/rail-card.png" alt=""></div>
+        <figcaption><b>The Suite's card,</b> at the foot of the sidebar.</figcaption></figure>
+      <ol class="hsteps">
+        <li><span><b>The Suite says so</b>Its card and the updates view show the new version.</span></li>
+        <li><span><b>Update</b>Downloads it and checks it the same way. Windows asks for permission.</span></li>
+        <li><span><b>In place</b>The Suite closes, the new version is installed in the same folder, and it opens again.</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="folio"><span>SCAFFApps Suite handbook · Updates, and the Suite's own</span><span class="n"></span></div>
+</section>
+
+<!-- =============================================================================================== handbooks -->
+<section class="page" id="books">
+  <div class="tab" style="--c: #141414; --on: #f3f0ea"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></i><b>BOOKS</b></div>
+  <div class="grain"></div>
+  <div class="pad">
+    <div class="hd">
+      <div class="kicker">Chapter 06 · Handbooks</div>
+      <h1>Every app's guide. <em>One click away.</em></h1>
+      <p class="lede">Each SCAFFApps app has a handbook like this one: a PDF with pictures, published with each version of the app.</p>
+    </div>
+    <figure class="fill"><div class="shot dark-bg"><img src="img/view-books.png" alt=""></div>
+      <figcaption><b>The handbooks view:</b> one for each app, with the version it describes.</figcaption></figure>
+    <div class="facts c3">
+      <div class="fact"><h3>Open</h3><p>Downloads it the first time, checks it like an installer, and opens it in your PDF reader.</p></div>
+      <div class="fact"><h3>From a card</h3><p>⋯ &gt; Handbook on an app's card does the same, and so does the Handbooks list on the home view.</p></div>
+      <div class="fact"><h3>Always the right one</h3><p>The handbook comes with each release, so it describes the newest version.</p></div>
+    </div>
+  </div>
+  <div class="folio"><span>SCAFFApps Suite handbook · Handbooks</span><span class="n"></span></div>
+</section>
+
+<!-- =============================================================================================== settings -->
+<section class="page" id="settings">
+  <div class="tab" style="--c: #f0c33c; --on: #141414"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg></i><b>SETTINGS</b></div>
+  <div class="grain"></div>
+  <div class="pad">
+    <div class="hd">
+      <div class="kicker">Chapter 07 · Settings</div>
+      <h1>A few switches. <em>That is all.</em></h1>
+      <p class="lede">How the Suite looks after your apps, and itself.</p>
+    </div>
+    <figure class="fill"><div class="shot dark-bg"><img src="img/view-settings.png" alt=""></div>
+      <figcaption><b>Settings,</b> with who the Suite is registered to.</figcaption></figure>
+    <table class="tbl">
+      <tr><th>Setting</th><th>What it does</th></tr>
+      <tr><td>Check for updates automatically</td><td>When the Suite starts and once a day while it runs. Off: only when you press Check for updates.</td></tr>
+      <tr><td>Tell me when an update is ready</td><td>A Windows notification, once for each new version, when the window is not in front.</td></tr>
+      <tr><td>Start the Suite with Windows</td><td>It starts hidden, in the tray. Closing the window keeps it there; to quit, right-click the tray icon.</td></tr>
+      <tr><td>Appearance</td><td>Dark (the usual one) or light.</td></tr>
+      <tr><td>Registered to</td><td>The name and e-mail address you gave.</td></tr>
+    </table>
+  </div>
+  <div class="folio"><span>SCAFFApps Suite handbook · Settings</span><span class="n"></span></div>
+</section>
+
+<!-- =============================================================================================== what is sent, and help -->
+<section class="page" id="help">
+  <div class="tab" style="--c: #141414; --on: #f3f0ea"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14"/><path d="M12 17.5h.01"/></svg></i><b>HELP</b></div>
+  <div class="grain"></div>
+  <div class="pad">
+    <div class="hd">
+      <div class="kicker">Chapter 08 · What is sent, and help</div>
+      <h1>Nothing hidden. <em>The fixes.</em></h1>
+    </div>
+    <div class="facts c3">
+      <div class="fact"><h3>Your registration</h3><p>Once for each version of each SCAFFApps app: your name, e-mail address, a random number made for this Windows account, the app's name and version, and the Windows version, to SCAFFApps (www.scaffapps.com). Nothing else about you or the computer.</p></div>
+      <div class="fact"><h3>Update checks</h3><p>Ordinary web requests to GitHub for each app's latest release and for the list of SCAFFApps apps, naming the Suite and its version.</p></div>
+      <div class="fact"><h3>Downloads</h3><p>Installers and handbooks come from GitHub, each checked against its published checksums before it is used.</p></div>
+    </div>
+    <div class="kicker" style="margin-top: 1mm">If something is not right</div>
+    <table class="tbl tight">
+      <tr><th style="width: 66mm">What you see</th><th>What to do</th></tr>
+      <tr><td>"Windows protected your PC"</td><td>Choose More info, then Run anyway. The installer is not code-signed.</td></tr>
+      <tr><td>"Windows did not get permission"</td><td>Choose the button again, and answer Yes when Windows asks.</td></tr>
+      <tr><td>"… did not match its published checksum"</td><td>Nothing was installed. Try again later; if it keeps happening, tell SCAFFApps.</td></tr>
+      <tr><td>"GitHub is limiting how often it can be asked"</td><td>Try again in an hour.</td></tr>
+      <tr><td>"GitHub could not be reached"</td><td>Check the internet connection, and try again.</td></tr>
+      <tr><td>An app has no installer yet</td><td>Its card offers its release page instead.</td></tr>
+      <tr><td>An installed app is not shown</td><td>The Suite finds apps in Windows' list of installed programs. Install it again from its card.</td></tr>
+      <tr><td>The Suite is not in the tray</td><td>Open it from the Start menu's SCAFFApps folder; turn on Start the Suite with Windows in Settings.</td></tr>
+    </table>
+    <div class="split">
+      <figure><div class="shot fit dark-bg"><img src="img/rail-card.png" alt=""></div>
+        <figcaption><b>Your version,</b> on the Suite's card at the foot of the sidebar; the arrow checks for updates.</figcaption></figure>
+      <div class="stack">
+        <div class="gtk gold">
+          <h3>Need a hand?</h3>
+          <ul class="ticks">
+            <li>Write to <b>info@scaffapps.com</b> with what you see and what you expected.</li>
+            <li>Say which version you have: the Suite's card, at the foot of the sidebar.</li>
+          </ul>
+        </div>
+        <div class="gtk">
+          <h3>Quicker</h3>
+          <ul class="ticks">
+            <li><kbd>Ctrl</kbd> + <kbd>K</kbd> searches the apps.</li>
+            <li><b>Check for updates</b>, at the top, asks GitHub straight away.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>SCAFFApps Suite handbook · What is sent, and help</span><span class="n"></span></div>
+</section>
+
+<!-- =============================================================================================== back cover -->
+<section class="page back" id="back">
+  <div class="grain"></div>
+  <div class="lbl top"><span>SCAFFApps</span><span>/</span><span>SCAFFApps Suite</span><span class="dot">·</span><span>Published by SCAFFApps</span></div>
+  <div class="rule r1"></div>
+  <div class="bigword"><div class="w1">Useful apps</div><div class="w2">for every laptop.</div><div class="sel"><b></b><b></b><b></b><b></b></div></div>
+  <div class="ruler" aria-hidden="true"></div>
+  <div class="rule r2"></div>
+  <p class="cta">The SCAFFApps Suite looks after every SCAFFApps app: small, focused tools for people who work on a laptop all day. Each installs in a moment and keeps itself up to date.</p>
+  <div class="concrete"></div>
+  <div class="family">
+    <div><img src="img/family-multi-screens.svg" alt="">Multi Screens</div>
+    <div><img src="img/family-smart-snap.svg" alt="">Smart Snap</div>
+    <div><img src="img/family-instant-share.svg" alt="">Instant Share</div>
+    <div><img src="img/family-suite.svg" alt="">SCAFFApps Suite</div>
+    <div><span class="more">+</span>And more to come</div>
+  </div>
+  <div class="ask">
+    <div class="sticker"><h2>Every app, <em>in one window.</em></h2></div>
+    <p>The <b>SCAFFApps Suite</b> installs, opens and updates them all, and updates itself: one place to see which version you have and what is new. Get it, and every app, from <b>github.com/Rady193</b>.</p>
+    <div class="askgrid">
+      <div class="shot"><img src="img/suite-home.png" alt=""></div>
+      <div class="shot"><img src="img/suite-updates.png" alt=""></div>
+      <div class="shot"><img src="img/suite-settings.png" alt=""></div>
+      <div class="shot"><img src="img/suite-home-light.png" alt=""></div>
+    </div>
+  </div>
+  <div class="end">
+    <div class="col">
+      <img class="lgs" src="img/logo-st.svg" alt="SCAFFApps">
+    </div>
+    <div class="col">
+      <div class="qr"><img src="img/qr.png" alt="QR code for www.scaffapps.com"><i></i><i></i><i></i><i></i></div>
+      <div class="url">www.scaffapps.com</div>
+      <div class="ct">Contact us</div>
+      <div class="mail">info@scaffapps.com</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // as the brochure: the footer's wordmark, a ruler down the outer edge of every page with a tab (ticks every
+  // centimetre), the folio numbers, and the page numbers of the contents and the cover lines, from the page order
+  const pages = [...document.querySelectorAll('.page')]
+  const mm = 96 / 25.4
+  pages.forEach(p => { const f = p.querySelector('.folio'); if (f) f.insertAdjacentHTML('afterbegin', '<img class="wmi" src="img/logo-wm.svg" alt="SCAFFApps">')
+    if (p.querySelector('.tab') && !p.querySelector('.ruler')) p.insertAdjacentHTML('beforeend', '<div class="ruler" aria-hidden="true"></div>') })
+  document.querySelectorAll('.ruler').forEach(r => { const h = r.getBoundingClientRect().height / mm
+    for (let y = 0, k = 1; y <= h; y += 10, k++) r.insertAdjacentHTML('beforeend', `<i style="top:${y}mm"></i><div style="top:${y}mm">${String(k).padStart(2, '0')}</div>`) })
+  pages.forEach((p, i) => p.querySelectorAll('.folio .n').forEach(n => { n.textContent = String(i + 1).padStart(2, '0') }))
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    const to = document.getElementById(a.getAttribute('href').slice(1)), n = String(pages.indexOf(to) + 1).padStart(2, '0')
+    const slot = a.querySelector('.n'); if (slot) slot.textContent = n; else if (!a.textContent) a.textContent = n
+  })
+</script>
+</body>
+</html>
