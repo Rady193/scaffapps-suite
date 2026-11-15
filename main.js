@@ -13,6 +13,7 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const registration = require('./registration');
+const releases = require('./releases');
 
 const SUITE_REPO = 'Rady193/scaffapps-suite';
 const SUITE_PAGE = `https://github.com/${SUITE_REPO}/releases/latest`;
@@ -136,12 +137,12 @@ function fileOf(release, pattern) {
   return a ? { name: a.name, url: a.browser_download_url, size: Number(a.size) || 0, sha256: expectedChecksum(a, release.body) } : null;
 }
 
+// Asked of the SCAFFApps website first (releases.js), GitHub's API last; a stand-in for GitHub (SUITE_GITHUB_API) is
+// asked alone. null: the app has no release yet.
 async function latestRelease(repo) {
-  const res = await net.fetch(`${GITHUB_API}/repos/${repo}/releases/latest`, { cache: 'no-store', headers: { Accept: 'application/vnd.github+json', 'User-Agent': AGENT } });
-  if (res.status === 403 || res.status === 429) throw new Error('GitHub is limiting how often it can be asked. Try again in an hour.');
-  if (res.status === 404) return null;
-  if (!res.ok) throw new Error(`GitHub answered with error ${res.status}. Try again later.`);
-  const r = await res.json();
+  const r = await releases.latest(repo, { agent: AGENT, missing: 'null',
+    test: process.env.SUITE_GITHUB_API ? `${GITHUB_API}/repos/${repo}/releases/latest` : null });
+  if (!r) return null;
   const version = String(r.tag_name || '').replace(/^v/i, '');
   if (!/^\d+(\.\d+)*$/.test(version)) throw new Error('The latest release has no version number.');
   return { version, name: String(r.name || version), notes: String(r.body || ''), published: r.published_at || null,

@@ -88,7 +88,8 @@ the new version is installed in the same folder, and it opens again.
   this Windows account (so your apps are counted as one person), the app's name and version, and the Windows version.
   It goes to `www.scaffapps.com/api/register` and is kept by SCAFFApps to know who uses its apps. Nothing else about
   you or the computer is sent.
-- **Update checks** ask GitHub (`api.github.com`) for each app's latest release, and `raw.githubusercontent.com` for
+- **Update checks** ask `www.scaffapps.com` for each app's latest release (else `releases.json` in this repository,
+  on `raw.githubusercontent.com`, and only then GitHub's API, `api.github.com`), and `raw.githubusercontent.com` for
   the list of SCAFFApps apps (`catalogue.json` in this repository). These are ordinary web requests naming the Suite
   and its version.
 - **Downloads** of installers and handbooks come from GitHub.
@@ -110,6 +111,14 @@ gives the app's GitHub repository, the pattern of its installer's and handbook's
 the start of its name in Windows' list of installed programs. The app must publish a Windows installer (not only a
 portable file) and list each file's SHA-256 in its release notes, like the other SCAFFApps apps. Its icon is shown
 from `app/icons` if the Suite has it, else from the `iconUrl` given (on `raw.githubusercontent.com`).
+
+## After publishing a release of any SCAFFApps app
+
+Run `node make-releases.js` in this folder (it needs the GitHub CLI, `gh`, signed in), then commit and push
+`releases.json`. Every SCAFFApps app reads its newest release from that file, through `www.scaffapps.com/api/releases/<app>`
+(the website keeps a copy for five minutes) or straight from `raw.githubusercontent.com`, and asks GitHub's API only
+when neither answers: the API answers only 60 questions an hour for each internet connection, shared by every
+computer and app behind it. Until `releases.json` is pushed, the apps do not see the new release.
 
 ## Building from source
 
@@ -136,6 +145,8 @@ and `SCAFFAPPS_REGISTRATION_FILE` / `SCAFFAPPS_REGISTER_URL` for the registratio
 |---|---|
 | `main.js` | The window, tray and start with Windows; the catalogue; finding installed and running apps; GitHub releases, checked downloads, installing, uninstalling, handbooks; the Suite's own update. |
 | `preload.js` | The small, fixed set of requests the window may make of `main.js`. |
+| `releases.js` | Asks for an app's newest release: the website, then `releases.json`, then GitHub's API. The same file in every SCAFFApps Electron app. |
+| `make-releases.js`, `releases.json` | The newest release of every SCAFFApps app, written after each release (see above). |
 | `registration.js`, `registration-preload.js`, `app/registration.html` | The name and e-mail registration, the same files in every SCAFFApps Electron app. |
 | `catalogue.json` | The SCAFFApps apps the Suite offers (the newest copy is read from GitHub). |
 | `app/index.html`, `app/style.css`, `app/suite.css`, `app/renderer.js`, `app/theme-early.js` | The window. |

@@ -1,0 +1,107 @@
+{
+ "generated": "2026-11-15T23:45:17.150Z",
+ "repos": {
+  "multi-screens": {
+   "tag_name": "v1.8.2",
+   "name": "Multi Screens 1.8.2",
+   "body": "The handbook in the SCAFFApps style, scrollbars in the SCAFFApps colours, and panels that fit the window.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `Multi-Screens-Setup-1.8.2.exe` | 78.0 MB | `AD1FC40AB3225AD666F21DEA54273F4542327934003CAA45CEF09031A077A6B7` |\r\n| `Multi-Screens-Handbook-1.8.2.pdf` | 4.3 MB | `0FA3603C1558A23CEABE3952F521A2F2A140C97386770002CE6BE551FBF76C99` |\r\n\r\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### Changed\r\n\r\n- **The handbook**, `Multi-Screens-Handbook-1.8.2.pdf`: 15 pages with pictures in the SCAFFApps brochure style, from installing to troubleshooting. The SCAFFApps Suite opens it from Handbooks.\r\n- **\"Published by SCAFFApps - www.scaffapps.com\"** at the end of Settings and of the sign-up window.\r\n- **Scrollbars in the SCAFFApps style**: a slim purple bar on no track, wider under the pointer; never the grey Windows bar with its arrows.\r\n- **No scrolling where it can be helped**: Settings, history and saved logins use the window's height, so they scroll only on a short window.\r\n\r\n### Updating from 1.8.1\r\n\r\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\r\n\r\n### Tested\r\n\r\n- Updated from 1.8.1 by the installed SCAFFApps Suite 1.0.1, against a stand-in for GitHub offering this installer: downloaded, checked against both published checksums, Windows' permission, installed in 9 seconds; Windows lists 1.8.2.\r\n- Microsoft Defender finds nothing in the installer.\r\n- The handbook's pictures were taken from this version, in a test profile, on a sample site.\r\n",
+   "published_at": "2026-11-15T23:38:53Z",
+   "html_url": "https://github.com/Rady193/multi-screens/releases/tag/v1.8.2",
+   "assets": [
+    {
+     "name": "Multi-Screens-Handbook-1.8.2.pdf",
+     "size": 4487312,
+     "digest": "sha256:0fa3603c1558a23ceabe3952f521a2f2a140c97386770002ce6be551fbf76c99",
+     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.8.2/Multi-Screens-Handbook-1.8.2.pdf"
+    },
+    {
+     "name": "Multi-Screens-Setup-1.8.2.exe",
+     "size": 81738211,
+     "digest": "sha256:ad1fc40ab3225ad666f21dea54273f4542327934003caa45cef09031a077a6b7",
+     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.8.2/Multi-Screens-Setup-1.8.2.exe"
+    }
+   ]
+  },
+  "smart-snap": {
+   "tag_name": "v1.1.2",
+   "name": "Smart Snap 1.1.2",
+   "body": "The handbook in the SCAFFApps style, and scrollbars in the SCAFFApps colours.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `Smart-Snap-Setup-1.1.2.exe` | 78.0 MB | `D2243F9F80E16B54C25CF555066BDAC14C3F7A40F0E9CC9AA2DCFAD7CA795A31` |\r\n| `Smart-Snap-Handbook-1.1.2.pdf` | 3.6 MB | `98A18DF33F0931C33563959B2E9AD43306AFC9FC8ECE75B4BB526B8BE4AFCD3A` |\r\n\r\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### Changed\r\n\r\n- **The handbook**, `Smart-Snap-Handbook-1.1.2.pdf`: 12 pages with pictures in the SCAFFApps brochure style. The SCAFFApps Suite opens it from Handbooks.\r\n- **\"Published by SCAFFApps - www.scaffapps.com\"** at the end of Settings and of the sign-up window.\r\n- **Scrollbars in the SCAFFApps style**: a slim purple bar on no track, wider under the pointer; never the grey Windows bar with its arrows.\r\n\r\n### Updating from 1.1.1\r\n\r\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\r\n\r\n### Tested\r\n\r\n- Updated from 1.1.1 by the installed SCAFFApps Suite 1.0.1, against a stand-in for GitHub offering this installer: downloaded, checked against both published checksums, Windows' permission, installed in 9 seconds; Windows lists 1.1.2.\r\n- Microsoft Defender finds nothing in the installer.\r\n- The handbook's pictures were taken from this version, in a test profile, with snaps of a sample site (never the real screen).\r\n",
+   "published_at": "2026-11-15T23:39:03Z",
+   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.1.2",
+   "assets": [
+    {
+     "name": "Smart-Snap-Handbook-1.1.2.pdf",
+     "size": 3760692,
+     "digest": "sha256:98a18df33f0931c33563959b2e9ad43306afc9fc8ece75b4bb526b8be4afcd3a",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.1.2/Smart-Snap-Handbook-1.1.2.pdf"
+    },
+    {
+     "name": "Smart-Snap-Setup-1.1.2.exe",
+     "size": 81739992,
+     "digest": "sha256:d2243f9f80e16b54c25cf555066bdac14c3f7a40f0e9cc9aa2dcfad7ca795a31",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.1.2/Smart-Snap-Setup-1.1.2.exe"
+    }
+   ]
+  },
+  "instant-share": {
+   "tag_name": "v1.3.4",
+   "name": "Instant Share 1.3.4",
+   "body": "The handbook in the SCAFFApps style, Settings without scrolling, and scrollbars in the SCAFFApps colours.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `Instant-Share-Setup-1.3.4.exe` | 13.8 MB | `82890597DE5D6762DE53BD75B28E3D3E60028ECA4D2B19877DED5697EB92EB75` |\r\n| `Instant-Share-1.3.4.apk` | 70 KB | `80327A7CCF54A3B0A9639D4DD0ED3C6D78CF5102B2E5542261DA36EA563B52C9` |\r\n| `instantshare.py` | 169 KB | `0B7C207D5BD63D2EA2C43C1BF869451E7720692F66D307DEA6F407A0FA780F23` |\r\n| `THIRD-PARTY-NOTICES.txt` | 143 KB | `0FEE3D7AD39B18F748FC67EE2ABDDF5CCF77E01668709074FEEEB52D522CD01C` |\r\n| `Instant-Share-Handbook-1.3.4.pdf` | 3.1 MB | `BA2B788D48AF47D3D2D635C9E2970B11CDB7755DB957783B6DD18213C9C7D4E9` |\r\n\r\nFor 64-bit Windows 10 and 11, and Android 10 and newer. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### Changed\r\n\r\n- **The handbook**, `Instant-Share-Handbook-1.3.4.pdf`: 15 pages with pictures in the SCAFFApps brochure style, from setting up to privacy. The SCAFFApps Suite opens it from Handbooks.\r\n- **Settings without scrolling**: on a laptop-wide window the sheet is wider, with its sections in two or three columns; phones keep one column.\r\n- **Scrollbars in the SCAFFApps style**: a slim purple bar on no track, wider under the pointer; never the grey Windows bar. Phones keep their own.\r\n- **\"Published by SCAFFApps - www.scaffapps.com\"** on the welcome page, the setup page, the page's footer, Settings > About, and the Android app's setup screen.\r\n\r\n### Updating\r\n\r\n- **Windows, from 1.3.0 to 1.3.3:** Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\r\n- **Android:** install the new app over the old one, or **Update now** in the app.\r\n\r\n### Tested\r\n\r\n- Updated from 1.3.3 by the installed SCAFFApps Suite 1.0.1, against a stand-in for GitHub offering this installer: downloaded, checked against both published checksums, Windows' permission, installed in 10 seconds; Windows lists 1.3.4.\r\n- Microsoft Defender finds nothing in the installer or the Android app.\r\n- The handbook's pictures were taken from this version's own pages, with a made-up history and made-up devices.\r\n",
+   "published_at": "2026-11-15T23:39:07Z",
+   "html_url": "https://github.com/Rady193/instant-share/releases/tag/v1.3.4",
+   "assets": [
+    {
+     "name": "Instant-Share-1.3.4.apk",
+     "size": 71212,
+     "digest": "sha256:80327a7ccf54a3b0a9639d4dd0ed3c6d78cf5102b2e5542261da36ea563b52c9",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.4/Instant-Share-1.3.4.apk"
+    },
+    {
+     "name": "Instant-Share-Handbook-1.3.4.pdf",
+     "size": 3263639,
+     "digest": "sha256:ba2b788d48af47d3d2d635c9e2970b11cdb7755db957783b6dd18213c9c7d4e9",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.4/Instant-Share-Handbook-1.3.4.pdf"
+    },
+    {
+     "name": "Instant-Share-Setup-1.3.4.exe",
+     "size": 14504002,
+     "digest": "sha256:82890597de5d6762de53bd75b28e3d3e60028eca4d2b19877ded5697eb92eb75",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.4/Instant-Share-Setup-1.3.4.exe"
+    },
+    {
+     "name": "instantshare.py",
+     "size": 172695,
+     "digest": "sha256:0b7c207d5bd63d2ea2c43c1bf869451e7720692f66d307dea6f407a0fa780f23",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.4/instantshare.py"
+    },
+    {
+     "name": "THIRD-PARTY-NOTICES.txt",
+     "size": 146552,
+     "digest": "sha256:0fee3d7ad39b18f748fc67ee2abddf5ccf77e01668709074feeeb52d522cd01c",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.4/THIRD-PARTY-NOTICES.txt"
+    }
+   ]
+  },
+  "scaffapps-suite": {
+   "tag_name": "v1.0.2",
+   "name": "SCAFFApps Suite 1.0.2",
+   "body": "Its own handbook, scrollbars in the SCAFFApps colours, and a home view that fits a small laptop.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `SCAFFApps-Suite-Setup-1.0.2.exe` | 78.0 MB | `84D9DEE414DB3EEAEBD0A1EDB2E15031E346EDE2A0FEEE2276DBA6911EF286DC` |\r\n| `SCAFFApps-Suite-Handbook-1.0.2.pdf` | 3.8 MB | `9E0A7C925B4E016CB5C77AE9458BA98655A24856992FFFFE2BC467D6F25BA237` |\r\n\r\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### Changed\r\n\r\n- **Its own handbook**, `SCAFFApps-Suite-Handbook-1.0.2.pdf`: 11 pages with pictures in the SCAFFApps brochure style. The apps' handbooks (Multi Screens 1.8.2, Smart Snap 1.1.2, Instant Share 1.3.4) are now on their releases, so **Handbooks** opens them.\r\n- **Scrollbars in the SCAFFApps style**: a slim purple bar on no track, wider under the pointer; never the grey Windows bar.\r\n- **The home view fits a small laptop** (1366 × 768) without scrolling.\r\n- **\"Published by SCAFFApps - www.scaffapps.com\"** in Settings > About and at the foot of the sign-up window.\r\n\r\n### Updating from 1.0.0 or 1.0.1\r\n\r\n- **Update** on the Updates page, or the Suite's card in the sidebar. Windows asks for permission; the Suite closes, is updated and opens again.\r\n\r\n### Tested\r\n\r\n- The installed Suite 1.0.1, against a stand-in for GitHub offering the new versions, updated Smart Snap, Instant Share and Multi Screens with its own buttons (each downloaded, checked against both published checksums and installed with Windows' permission, in 9 to 10 seconds), then **updated itself** to 1.0.2: closed, installed and opened again, in 10 seconds. Windows lists all four new versions.\r\n- Microsoft Defender finds nothing in the installer.\r\n- The handbook's pictures were taken from this version, in a test profile, with a stand-in for GitHub and a made-up list of installed apps.\r\n",
+   "published_at": "2026-11-15T23:39:17Z",
+   "html_url": "https://github.com/Rady193/scaffapps-suite/releases/tag/v1.0.2",
+   "assets": [
+    {
+     "name": "SCAFFApps-Suite-Handbook-1.0.2.pdf",
+     "size": 4033370,
+     "digest": "sha256:9e0a7c925b4e016cb5c77ae9458ba98655a24856992ffffe2bc467d6f25ba237",
+     "browser_download_url": "https://github.com/Rady193/scaffapps-suite/releases/download/v1.0.2/SCAFFApps-Suite-Handbook-1.0.2.pdf"
+    },
+    {
+     "name": "SCAFFApps-Suite-Setup-1.0.2.exe",
+     "size": 81770857,
+     "digest": "sha256:84d9dee414db3eeaebd0a1edb2e15031e346ede2a0feee2276dba6911ef286dc",
+     "browser_download_url": "https://github.com/Rady193/scaffapps-suite/releases/download/v1.0.2/SCAFFApps-Suite-Setup-1.0.2.exe"
+    }
+   ]
+  }
+ }
+}

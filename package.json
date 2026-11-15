@@ -27,6 +27,7 @@
       "main.js",
       "preload.js",
       "registration.js",
+      "releases.js",
       "registration-preload.js",
       "catalogue.json",
       "app/**"
