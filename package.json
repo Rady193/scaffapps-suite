@@ -1,0 +1,54 @@
+{
+  "name": "scaffapps-suite",
+  "productName": "SCAFFApps Suite",
+  "version": "1.0.0",
+  "description": "One window for every SCAFFApps app: open them, keep them up to date, and install new ones.",
+  "main": "main.js",
+  "author": "SCAFFApps",
+  "license": "SEE LICENSE IN LICENSE",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8",
+    "rcedit": "^4.0.1"
+  },
+  "build": {
+    "appId": "com.scaffapps.suite",
+    "productName": "SCAFFApps Suite",
+    "copyright": "Copyright © 2026 SCAFFApps",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "registration.js",
+      "registration-preload.js",
+      "catalogue.json",
+      "app/**"
+    ],
+    "afterPack": "build/after-pack.js",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SCAFFApps Suite",
+      "menuCategory": "SCAFFApps",
+      "artifactName": "SCAFFApps-Suite-Setup-${version}.${ext}",
+      "include": "build/installer.nsh"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "about": "The SCAFFApps apps the SCAFFApps Suite offers. The Suite reads the newest copy of this file from its GitHub repository (main branch) and keeps this one inside it for when it cannot: adding an app here makes it appear in every Suite without updating the Suite. Each app is published on its GitHub repository's Releases page with a Windows installer (setup) and, if it has one, a handbook PDF, and lists each file's SHA-256 in the release notes. 'exe' is the program in the app's install folder; 'uninstall' is the start of its name in Windows' list of installed apps.",
+  "apps": [
+    {
+      "id": "multi-screens",
+      "name": "Multi Screens",
+      "repo": "Rady193/multi-screens",
+      "setup": "^Multi-Screens-Setup-\\d+(\\.\\d+)*\\.exe$",
+      "handbook": "^Multi-Screens-Handbook-\\d+(\\.\\d+)*\\.pdf$",
+      "exe": "Multi Screens.exe",
+      "uninstall": "Multi Screens",
+      "icon": "multi-screens.svg",
+      "tagline": "One web app side by side on phone, tablet and laptop screens. What you do on one screen is repeated on the others."
+    },
+    {
+      "id": "smart-snap",
+      "name": "Smart Snap",
+      "repo": "Rady193/smart-snap",
+      "setup": "^Smart-Snap-Setup-\\d+(\\.\\d+)*\\.exe$",
+      "handbook": "^Smart-Snap-Handbook-\\d+(\\.\\d+)*\\.pdf$",
+      "exe": "Smart Snap.exe",
+      "uninstall": "Smart Snap",
+      "icon": "smart-snap.svg",
+      "tagline": "Screenshots that remember where they came from: the app, the window and the web address. Then one PDF report."
+    },
+    {
+      "id": "instant-share",
+      "name": "Instant Share",
+      "repo": "Rady193/instant-share",
+      "setup": "^Instant-Share-Setup-\\d+(\\.\\d+)*\\.exe$",
+      "handbook": "^Instant-Share-Handbook-\\d+(\\.\\d+)*\\.pdf$",
+      "exe": "Instant Share.exe",
+      "uninstall": "Instant Share",
+      "icon": "instant-share.svg",
+      "tagline": "Text, photos, documents and voice notes between your computers and phones, on your own network."
+    }
+  ]
+}
