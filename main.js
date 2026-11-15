@@ -68,7 +68,7 @@ function run(file, args, env) {
 async function readInstalled() {
   if (process.env.SUITE_INSTALLED_JSON) { try { return JSON.parse(fs.readFileSync(process.env.SUITE_INSTALLED_JSON, 'utf8')); } catch { return []; } }
   const ps = "$k = 'HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*','HKLM:\\Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*','HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*';"
-    + " @(Get-ItemProperty $k -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName } | Select-Object DisplayName, DisplayVersion, InstallLocation, UninstallString) | ConvertTo-Json -Compress";
+    + " @(Get-ItemProperty $k -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName } | Select-Object DisplayName, DisplayVersion, InstallLocation, UninstallString, DisplayIcon) | ConvertTo-Json -Compress";
   const out = await run('powershell.exe', ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-Command', ps]);
   try { const list = JSON.parse(out || '[]'); return Array.isArray(list) ? list : [list]; } catch { return []; }
 }
@@ -81,13 +81,28 @@ async function runningExes() {
 const state = new Map();      // id -> { installed, running, latest, busy, progress, error, message }
 const appState = (id) => { if (!state.has(id)) state.set(id, { installed: null, running: false, latest: null, busy: null, progress: null, error: null }); return state.get(id); };
 
+// Where an installed program is. The apps' own installer (Instant Share) records InstallLocation; Electron's
+// (Multi Screens, Smart Snap, the Suite) does not, so it is the folder of the uninstaller or of the program's icon.
+function folderOf(e) {
+  if (e.InstallLocation) return String(e.InstallLocation).replace(/[\\/]+$/, '');
+  const uninstall = String(e.UninstallString || '');
+  const quoted = /^\s*"([^"]+\.exe)"/i.exec(uninstall) || /^\s*([^"]+?\.exe)\b/i.exec(uninstall);
+  if (quoted) return path.dirname(quoted[1]);
+  const icon = String(e.DisplayIcon || '').replace(/,\s*-?\d+\s*$/, '').replace(/^"|"$/g, '');
+  return icon ? path.dirname(icon) : '';
+}
+
 async function scan() {
   const [installed, running] = await Promise.all([readInstalled(), runningExes()]);
   for (const a of catalogue) {
     const st = appState(a.id);
-    const entry = installed.find((e) => String(e.DisplayName || '').toLowerCase().startsWith(String(a.uninstall || a.name).toLowerCase())
-      && e.InstallLocation && fs.existsSync(path.join(e.InstallLocation, a.exe)));
-    st.installed = entry ? { version: String(entry.DisplayVersion || '').replace(/^v/i, ''), location: entry.InstallLocation, uninstall: entry.UninstallString || '' } : null;
+    // the newest entry whose program is really there (an old, half-removed entry is skipped)
+    const entry = installed
+      .filter((e) => String(e.DisplayName || '').toLowerCase().startsWith(String(a.uninstall || a.name).toLowerCase()))
+      .map((e) => ({ ...e, folder: folderOf(e) }))
+      .filter((e) => e.folder && fs.existsSync(path.join(e.folder, a.exe)))
+      .sort((x, y) => (isNewer(x.DisplayVersion, y.DisplayVersion) ? -1 : 1))[0];
+    st.installed = entry ? { version: String(entry.DisplayVersion || '').replace(/^v/i, ''), location: entry.folder, uninstall: entry.UninstallString || '' } : null;
     st.running = running.has(a.exe.toLowerCase());
   }
 }
