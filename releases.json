@@ -1,24 +1,24 @@
 {
- "generated": "2026-11-15T23:45:17.150Z",
+ "generated": "2026-11-16T05:34:13.195Z",
  "repos": {
   "multi-screens": {
-   "tag_name": "v1.8.2",
-   "name": "Multi Screens 1.8.2",
-   "body": "The handbook in the SCAFFApps style, scrollbars in the SCAFFApps colours, and panels that fit the window.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `Multi-Screens-Setup-1.8.2.exe` | 78.0 MB | `AD1FC40AB3225AD666F21DEA54273F4542327934003CAA45CEF09031A077A6B7` |\r\n| `Multi-Screens-Handbook-1.8.2.pdf` | 4.3 MB | `0FA3603C1558A23CEABE3952F521A2F2A140C97386770002CE6BE551FBF76C99` |\r\n\r\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### Changed\r\n\r\n- **The handbook**, `Multi-Screens-Handbook-1.8.2.pdf`: 15 pages with pictures in the SCAFFApps brochure style, from installing to troubleshooting. The SCAFFApps Suite opens it from Handbooks.\r\n- **\"Published by SCAFFApps - www.scaffapps.com\"** at the end of Settings and of the sign-up window.\r\n- **Scrollbars in the SCAFFApps style**: a slim purple bar on no track, wider under the pointer; never the grey Windows bar with its arrows.\r\n- **No scrolling where it can be helped**: Settings, history and saved logins use the window's height, so they scroll only on a short window.\r\n\r\n### Updating from 1.8.1\r\n\r\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\r\n\r\n### Tested\r\n\r\n- Updated from 1.8.1 by the installed SCAFFApps Suite 1.0.1, against a stand-in for GitHub offering this installer: downloaded, checked against both published checksums, Windows' permission, installed in 9 seconds; Windows lists 1.8.2.\r\n- Microsoft Defender finds nothing in the installer.\r\n- The handbook's pictures were taken from this version, in a test profile, on a sample site.\r\n",
-   "published_at": "2026-11-15T23:38:53Z",
-   "html_url": "https://github.com/Rady193/multi-screens/releases/tag/v1.8.2",
+   "tag_name": "v1.9.0",
+   "name": "Multi Screens 1.9.0",
+   "body": "Copy a review report as a picture, and the tools beside the device chips.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Multi-Screens-Setup-1.9.0.exe` | 78.0 MB | `3760F183E96A78C419F38E741542AE8DFF9E14B5AD0C078E3B3156A108595958` |\n| `Multi-Screens-Handbook-1.9.0.pdf` | 4.3 MB | `CAB1F4601B296F6B1368050D99A953CBD6D8C6DB924AD84A15D4310BCC1A0D77` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Added\n\n- **Copy as picture**, in the review screen: the whole report on the clipboard as one tall picture, to paste into a chat, an email or a document. It is the PDF's report on one page, twice as sharp as the screen. Nothing is saved and the notes stay, so the PDF can still be made afterwards.\n\n### Changed\n\n- **The tools beside the device chips**: Note anywhere, Review notes, Find overflow, Screenshot all and Clear site data move from the second bar to the devices' line.\n- **The handbook**, `Multi-Screens-Handbook-1.9.0.pdf`, with its pictures retaken from this version.\n\n### Updating from 1.8.2\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- Copy as picture from the source code, on a sample site with notes on two phones: a 1588 × 3152 picture on the clipboard in under a second, both notes still in the review screen. Create PDF report still saves the PDF and clears its notes.\n- The tools beside the device chips in the dark and light appearances, and as icons only on a narrower window.\n- 1.8.2 installed, then this installer over it as Update now runs it (silent, with Windows' permission): installed in 8 seconds, Windows lists 1.9.0, and it opens.\n- Microsoft Defender finds nothing in the installer.\n\n",
+   "published_at": "2026-11-16T05:34:01Z",
+   "html_url": "https://github.com/Rady193/multi-screens/releases/tag/v1.9.0",
    "assets": [
     {
-     "name": "Multi-Screens-Handbook-1.8.2.pdf",
-     "size": 4487312,
-     "digest": "sha256:0fa3603c1558a23ceabe3952f521a2f2a140c97386770002ce6be551fbf76c99",
-     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.8.2/Multi-Screens-Handbook-1.8.2.pdf"
+     "name": "Multi-Screens-Handbook-1.9.0.pdf",
+     "size": 4479987,
+     "digest": "sha256:cab1f4601b296f6b1368050d99a953cbd6d8c6db924ad84a15d4310bcc1a0d77",
+     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.9.0/Multi-Screens-Handbook-1.9.0.pdf"
     },
     {
-     "name": "Multi-Screens-Setup-1.8.2.exe",
-     "size": 81738211,
-     "digest": "sha256:ad1fc40ab3225ad666f21dea54273f4542327934003caa45cef09031a077a6b7",
-     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.8.2/Multi-Screens-Setup-1.8.2.exe"
+     "name": "Multi-Screens-Setup-1.9.0.exe",
+     "size": 81740384,
+     "digest": "sha256:3760f183e96a78c419f38e741542ae8dff9e14b5ad0c078e3b3156a108595958",
+     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.9.0/Multi-Screens-Setup-1.9.0.exe"
     }
    ]
   },
