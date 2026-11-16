@@ -12,6 +12,7 @@ contextBridge.exposeInMainWorld('suite', {
   releasePage: (id) => ipcRenderer.invoke('release-page', id),
   updateSuite: () => ipcRenderer.invoke('update-suite'),
   setting: (key, value) => ipcRenderer.invoke('setting', key, value),
+  favourite: (id, on) => ipcRenderer.invoke('favourite', id, !!on),
   onStatus: (fn) => ipcRenderer.on('status', (e, s) => fn(s)),
   onGo: (fn) => ipcRenderer.on('go', (e, view) => fn(view)),
 });

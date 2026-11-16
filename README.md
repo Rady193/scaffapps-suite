@@ -3,7 +3,7 @@
 One window for every SCAFFApps app. The Suite installs the apps, opens them, keeps them up to date, opens their
 handbooks, and keeps itself up to date the same way. It waits in the tray and can start with Windows.
 
-Version 1.0.2 · Windows 10 and 11 (64-bit) · Published by SCAFFApps
+Version 1.0.3 · Windows 10 and 11 (64-bit) · Published by SCAFFApps
 
 ## Contents
 
@@ -22,7 +22,7 @@ Version 1.0.2 · Windows 10 and 11 (64-bit) · Published by SCAFFApps
 
 ## Install
 
-Download `SCAFFApps-Suite-Setup-1.0.2.exe` from the [Releases page](https://github.com/Rady193/scaffapps-suite/releases/latest)
+Download `SCAFFApps-Suite-Setup-1.0.3.exe` from the [Releases page](https://github.com/Rady193/scaffapps-suite/releases/latest)
 and run it. It installs for everyone on the computer in `C:\Program Files\SCAFFApps\SCAFFApps Suite`, beside the apps
 it looks after, so Windows asks for administrator permission once. It adds a desktop shortcut and a Start menu
 shortcut in the **SCAFFApps** folder, and can be removed from Windows Settings like any program.
@@ -39,9 +39,11 @@ same Windows account use the same details and do not ask again. See [What is sen
 
 ## The window
 
-- **Home**: the scaffold shows each app in its own bay (an app that is not installed is faded), and the scaffold tag
-  says whether updates are ready. Each app has a card: **Open**, **Update** when a newer version is out, or
-  **Install**. The **⋯** menu has the release notes, the handbook, the app's folder and **Uninstall**.
+- **Home**: the scaffold shows your favourite apps, each in its own bay, and the scaffold tag says whether updates
+  are ready. Each app has a card: **Open**, **Update** when a newer version is out, or **Install**. The star beside
+  **Open** marks an installed app as a favourite, or takes it off the scaffold; until you change one, every installed
+  app is a favourite. The **⋯** menu has the same choice, the release notes, the handbook, the app's folder and
+  **Uninstall**.
   **What's new** lists each app's latest release; **Handbooks** opens their guides.
 - **My apps**: every SCAFFApps app, its version, whether it is running, and where it is installed.
 - **Updates**: the Suite itself and each app, the version you have and the newest one, and its release notes.

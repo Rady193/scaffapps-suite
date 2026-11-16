@@ -352,8 +352,16 @@ function iconOf(a) {
   return /^https:\/\/raw\.githubusercontent\.com\//.test(a.iconUrl || '') ? a.iconUrl : 'brand/icon.svg';
 }
 
+// The apps on the scaffold: the ones marked as favourites (only installed apps can be). Until the user marks or
+// unmarks one, every installed app counts as a favourite; from then on their own list is kept.
+function favourites() {
+  const s = loadSettings();
+  return Array.isArray(s.favourites) ? s.favourites : catalogue.filter((a) => appState(a.id).installed).map((a) => a.id);
+}
+
 function status() {
   const r = registration.read();
+  const favs = favourites();
   return {
     version: app.getVersion(), packaged: app.isPackaged, justUpdated: JUST_UPDATED,
     user: r ? { name: r.name, email: r.email } : null,
@@ -364,6 +372,7 @@ function status() {
     apps: catalogue.map((a) => {
       const st = appState(a.id), l = st.latest;
       return { id: a.id, name: a.name, tagline: a.tagline || '', icon: iconOf(a), installed: st.installed && { version: st.installed.version, location: st.installed.location },
+        favourite: !!st.installed && favs.includes(a.id),
         running: st.running, update: hasUpdate(a.id), busy: st.busy, progress: st.progress, error: st.error, message: st.message || null,
         latest: l && { version: l.version, notes: l.notes, published: l.published, page: l.page, size: l.setup ? l.setup.size : 0,
           installer: !!l.setup, verified: !!(l.setup && l.setup.sha256 && l.setup.sha256 !== 'mismatch'), handbook: !!l.handbook } };
@@ -440,6 +449,14 @@ ipcMain.handle('release-page', (e, id) => {
   if (page && /^https:\/\/github\.com\//.test(page)) shell.openExternal(page);
 });
 ipcMain.handle('update-suite', () => updateSuite());
+ipcMain.handle('favourite', (e, id, on) => {
+  id = String(id);
+  if (!catalogue.some((a) => a.id === id) || !appState(id).installed) return status();
+  const favs = favourites().filter((x) => x !== id);
+  loadSettings().favourites = on ? [...favs, id] : favs;
+  saveSettings(); send();
+  return status();
+});
 ipcMain.handle('setting', (e, key, value) => {
   const s = loadSettings();
   if (key === 'theme') {

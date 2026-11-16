@@ -1,5 +1,43 @@
 # Release notes
 
+## 1.0.3 — 16 November 2026
+
+Your favourite apps on the scaffold, and a smaller Suite card in the sidebar.
+
+### Downloads
+
+| File | Size | SHA-256 |
+|---|---|---|
+| `SCAFFApps-Suite-Setup-1.0.3.exe` | 78.0 MB | `7ED13213358E0B8B62FD4EC78212EBD17FE0D11F10FAAB845CA4289424112EDD` |
+| `SCAFFApps-Suite-Handbook-1.0.3.pdf` | 3.8 MB | `53955224C01B4E353C68F6E271A066E473E4FABB46FBEE976DC8FFD9448BE092` |
+
+For 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.
+
+### Added
+
+- **Favourites.** The star beside an installed app's **Open** makes it a favourite, or takes it off; the app's **⋯** menu has **Add to favourites** and **Remove from favourites** too, so it also works from **My apps**. The scaffold on the home view shows your favourites, one to a bay. Until you change one, every installed app is a favourite, so the scaffold looks as before; with none, a sign on the scaffold says how to put one there.
+
+### Changed
+
+- **The scaffold**: each app stands in the middle of its bay, and the dashed places marked + are gone.
+- **The Suite's card in the sidebar** is smaller: the check-for-updates arrow sits beside the version, and the card says something only when an update for the Suite is ready or a check failed.
+- **The handbook**, `SCAFFApps-Suite-Handbook-1.0.3.pdf`, with favourites and its pictures retaken.
+
+### Updating from 1.0.2
+
+- **Update** on the Updates page, or the Suite's card in the sidebar. Windows asks for permission; the Suite closes, is updated and opens again.
+
+### Tested
+
+- From the source code in a test profile, in the dark and light appearance: the star and the ⋯ menu put each app on the scaffold and take it off, the choice is kept in the Suite's settings, the scaffold follows the catalogue's order, and with no favourites the sign shows. The sidebar card with an update ready.
+- Builds of these changes installed over 1.0.2 on a working computer, the way the Suite updates itself (silently, with Windows' permission): installed, and the Suite opened again.
+- Microsoft Defender finds nothing in the installer.
+- The handbook's pictures were taken from this version, in a test profile, with a stand-in for GitHub and a made-up list of installed apps.
+
+### Not tested
+
+- The Suite updating itself to 1.0.3 with its own **Update** button.
+
 ## 1.0.2 — 16 November 2026
 
 Its own handbook, scrollbars in the SCAFFApps colours, and a home view that fits a small laptop.

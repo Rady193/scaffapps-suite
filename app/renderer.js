@@ -30,6 +30,8 @@ const ico = {
   sun: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>',
   moon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>',
   play: '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>',
+  star: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg>',
+  starOn: '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg>',
   spin: '<svg class="spin-me" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 3a9 9 0 1 1-9 9"/></svg>',
 };
 
@@ -59,6 +61,9 @@ function chipHTML(a) {
   return a.latest ? `<span class="chip ok">${ico.check}Up to date</span>` : '';
 }
 
+// the star beside Open: an installed app marked as a favourite stands on the scaffold
+const favHTML = (a) => `<button class="btn fav ${a.favourite ? 'on' : ''}" data-fav="${a.id}" title="${a.favourite ? 'Favourite: on the scaffold. Click to take it off' : 'Add to favourites: it stands on the scaffold'}">${a.favourite ? ico.starOn : ico.star}</button>`;
+
 function cardHTML(a) {
   const status = a.busy ? `<div class="status"><span class="dot upd"></span><b>${a.installed ? 'Updating' : 'Installing'}</b></div>`
     : !a.installed ? `<div class="status"><span class="dot"></span>Not installed${a.latest && !a.latest.installer ? ' · its installer is coming' : ''}</div>`
@@ -68,8 +73,8 @@ function cardHTML(a) {
   else if (!a.installed && a.latest && !a.latest.installer) foot = `<div class="card-foot"><button class="btn" data-page="${a.id}">${ico.ext}Get it from its release page</button></div>`;
   else if (!a.installed) foot = `<div class="card-foot"><button class="btn primary" data-install="${a.id}" ${a.latest ? '' : 'disabled'}>${ico.down}Install</button></div>`;
   else if (a.update) foot = `${a.running ? `<div class="caution">${ico.warn}<span>${esc(a.name)} will close, update and open again.</span></div>` : ''}
-      <div class="card-foot"><button class="btn" data-open="${a.id}">${a.running ? 'Open' : ico.play + 'Open'}</button><button class="btn upd" data-install="${a.id}">${ico.down}Update</button></div>`;
-  else foot = `<div class="card-foot"><button class="btn ${a.running ? '' : 'primary'}" data-open="${a.id}">${a.running ? 'Open' : ico.play + 'Open'}</button></div>`;
+      <div class="card-foot"><button class="btn" data-open="${a.id}">${a.running ? 'Open' : ico.play + 'Open'}</button><button class="btn upd" data-install="${a.id}">${ico.down}Update</button>${favHTML(a)}</div>`;
+  else foot = `<div class="card-foot"><button class="btn ${a.running ? '' : 'primary'}" data-open="${a.id}">${a.running ? 'Open' : ico.play + 'Open'}</button>${favHTML(a)}</div>`;
   const err = a.error ? `<div class="note bad">${esc(a.error)}</div>` : '';
   const showTag = !a.busy && !(a.update && a.running) && !a.error;
   return `<article class="card ${a.update ? 'has-update' : ''} ${a.installed ? '' : 'not-installed'}" data-app="${a.id}">
@@ -104,12 +109,16 @@ function renderHome() {
   acts += `<button class="btn ghost lg" data-checkall ${S.checking ? 'disabled' : ''}>${S.checking ? ico.spin : ico.refresh}Check for updates</button>`;
   $('heroActs').innerHTML = acts;
 
-  const X = [119, 229, 339];
-  $('bays').innerHTML = S.apps.slice(0, 3).map((a, i) => `<g transform="translate(${X[i]},176)"><g class="bay ${a.installed ? '' : 'out'} ${a.running ? 'run' : ''}" data-app="${a.id}">
+  // each 64px icon in the middle of its bay: between the uprights (x 96, 206, 316, 426, 536, 6 wide) and between
+  // the ledger above (y 140, 6 wide) and the deck board below (top at y 241)
+  // the favourites stand on it, one to a bay; with none, a sign in the bays says how to put one there
+  const X = [119, 229, 339, 449], Y = 160;
+  const favs = inst.filter((a) => a.favourite).slice(0, X.length);
+  $('bays').innerHTML = favs.length ? favs.map((a, i) => `<g transform="translate(${X[i]},${Y})"><g class="bay ${a.running ? 'run' : ''}" data-app="${a.id}">
       <image href="${esc(a.icon)}" width="64" height="64"/><circle class="lamp" cx="61" cy="3" r="5"/>
-      <title>${esc(a.name)}${a.installed ? ' ' + esc(a.installed.version) : ' · not installed'}</title></g></g>`).join('')
-    + (S.apps.length < 4 ? '<g class="slot" transform="translate(449,176)"><rect width="64" height="64" rx="14"/><text x="32" y="40" text-anchor="middle">+</text></g>'
-      : `<g transform="translate(449,176)"><g class="bay ${S.apps[3].installed ? '' : 'out'}" data-app="${S.apps[3].id}"><image href="${esc(S.apps[3].icon)}" width="64" height="64"/></g></g>`);
+      <title>${esc(a.name)} ${esc(a.installed.version)}</title></g></g>`).join('')
+    : `<g class="fav-sign"><rect x="131" y="176" width="260" height="32" rx="9"/>
+      <text x="261" y="196" text-anchor="middle">${inst.length ? 'Star an app on its card to keep it here' : 'Your favourite apps stand here'}</text></g>`;
   const n = up.length, green = !n && !busy, now = new Date();
   const fill = green ? '#2fb673' : '#F5C518', ink = green ? '#ffffff' : '#2B1640';
   const l1 = busy ? 'UPDATING' : green ? 'ALL UP' : `${n} UPDATE${n > 1 ? 'S' : ''}`, l2 = busy ? '· · ·' : green ? 'TO DATE' : 'READY';
@@ -204,8 +213,11 @@ function renderRail() {
   const n = updates().length + (S.suite.update ? 1 : 0);
   $('upBadge').textContent = n; $('upBadge').hidden = !n;
   $('suiteVer').textContent = S.version;
-  $('suiteDot').style.background = S.suite.update ? 'var(--upd)' : S.checkError ? 'var(--danger)' : 'var(--ok)';
-  $('suiteSt').textContent = S.checking ? 'Checking…' : S.suite.update ? `${S.suite.latest.version} is ready` : S.checkError ? 'Could not check' : `Up to date · ${ago(S.checkedAt)}`;
+  // the card's second line only when there is news: up to date says nothing, and while checking the arrow spins
+  const say = S.suite.update ? `${S.suite.latest.version} is ready` : S.checkError && !S.checking ? 'Could not check' : '';
+  $('suiteStRow').hidden = !say;
+  $('suiteDot').style.background = S.suite.update ? 'var(--upd)' : 'var(--danger)';
+  $('suiteSt').textContent = say;
   $('suiteCheck').classList.toggle('spin', !!S.checking);
   $('tbCheck').classList.toggle('spin', !!S.checking);
   $('who').textContent = S.user ? `Registered to ${S.user.name}` : '';
@@ -235,7 +247,8 @@ function openMenu(btn, id) {
   closeMenu();
   const a = S.apps.find((x) => x.id === id); if (!a) return;
   const m = document.createElement('div'); m.className = 'menu';
-  m.innerHTML = (a.installed ? `<button data-open="${id}">Open ${esc(a.name)}</button>` : `<button data-install="${id}" ${a.latest && a.latest.installer ? '' : 'disabled'}>Install ${esc(a.name)}</button>`)
+  m.innerHTML = (a.installed ? `<button data-open="${id}">Open ${esc(a.name)}</button><button data-fav="${id}">${a.favourite ? 'Remove from favourites' : 'Add to favourites'}</button>`
+      : `<button data-install="${id}" ${a.latest && a.latest.installer ? '' : 'disabled'}>Install ${esc(a.name)}</button>`)
     + `<button data-page="${id}">Release notes</button><button data-book="${id}">Handbook</button>`
     + (a.installed ? `<button data-folder="${id}">Open its folder</button><hr><button class="danger" data-uninstall="${id}">Uninstall…</button>` : '');
   const r = btn.getBoundingClientRect();
@@ -280,6 +293,7 @@ document.addEventListener('click', async (e) => {
   if ('updall' in d) { for (const a of updates()) await take(window.suite.install(a.id)); return; }
   if ('checkall' in d) return take(window.suite.check());
   if ('suiteUpdate' in d) return take(window.suite.updateSuite());
+  if (d.fav) { const a = S.apps.find((x) => x.id === d.fav); return take(window.suite.favourite(d.fav, !(a && a.favourite))); }
   if (d.open) { const r = await window.suite.open(d.open); if (!r.ok) toast('Could not open it', 'It may have been moved or removed. Check for updates to look again.'); return; }
   if (d.book) { toast('Opening the handbook…', 'It is downloaded the first time, then opens in your PDF reader.'); const r = await window.suite.handbook(d.book); if (!r.ok) toast('The handbook did not open', r.error); return; }
   if (d.page) return window.suite.releasePage(d.page);

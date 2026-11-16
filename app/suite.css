@@ -4,8 +4,11 @@
 /* a short window (a small laptop: 1366 x 768 less the taskbar): the home view still fits without scrolling */
 @media (max-height: 760px) { .main { padding-top: 8px; padding-bottom: 8px } }
 .scaf .cord { stroke: var(--dim); stroke-width: 1.4 }
-.bay.out { opacity: .38 }
-.bay.out .plus { fill: var(--gold-ink); font: 600 22px "Segoe UI", sans-serif }
+/* favourites: the star beside the card's Open, and the sign on an empty scaffold */
+.card-foot .btn.fav { flex: none; width: 32px; padding: 0; color: var(--dim) }
+.card-foot .btn.fav.on { color: var(--gold-ink) }
+.fav-sign rect { fill: var(--panel); stroke: var(--gold); stroke-width: 1.5 }
+.fav-sign text { font: 600 11px "Segoe UI", sans-serif; fill: var(--text) }
 .card.not-installed { background: transparent; border-style: dashed; border-color: var(--line-2) }
 .card .note { font-size: 11.8px; line-height: 1.4; padding: 8px 10px; border-radius: 9px; background: var(--warn-soft); color: var(--text) }
 .card .note.bad, .up-row .note.bad { background: rgba(229, 72, 77, .12); color: var(--danger) }
