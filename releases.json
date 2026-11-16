@@ -1,45 +1,45 @@
 {
- "generated": "2026-11-16T09:03:02.523Z",
+ "generated": "2026-11-16T09:40:27.051Z",
  "repos": {
   "multi-screens": {
-   "tag_name": "v1.10.1",
-   "name": "Multi Screens 1.10.1",
-   "body": "Enter saves a note.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Multi-Screens-Setup-1.10.1.exe` | 78.0 MB | `113D34038B1921CB1E82B30BB5461A5490CAAD6CB99B1B034D95AF95EC4A81FD` |\n| `Multi-Screens-Handbook-1.10.1.pdf` | 4.1 MB | `81424EB83272BAB4D42682E98857C6318A062BB950C22F90893C0E1DB9D30AA0` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Changed\n\n- **Enter saves the note** being written; **Shift+Enter** starts a new line (Ctrl+Enter still saves too). The same in Smart Snap's comment box.\n- **The handbook**, `Multi-Screens-Handbook-1.10.1.pdf`, with Enter on the Notes and Keys pages.\n\n### Updating from 1.10.0\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- The packaged app, in a test profile with the handbook's sample site: a note typed over two lines with Shift+Enter stays open, and Enter saves it with both lines.\n- 1.10.0 installed offers this version (the handbook's update picture).\n- Microsoft Defender finds nothing in the installer.\n\n",
-   "published_at": "2026-11-16T09:02:45Z",
-   "html_url": "https://github.com/Rady193/multi-screens/releases/tag/v1.10.1",
+   "tag_name": "v1.10.2",
+   "name": "Multi Screens 1.10.2",
+   "body": "The Print Screen key is left to Smart Snap.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Multi-Screens-Setup-1.10.2.exe` | 78.0 MB | `7A86DC64DC17219804508E5EC90731DEC5831B8AB0E9CDA16FEFC0B393BCD78F` |\n| `Multi-Screens-Handbook-1.10.2.pdf` | 4.1 MB | `AEA16BCB0EF0E0D675DC884EA217E52FF5280C84650F3291615EBC092174A188` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Changed\n\n- **Print Screen no longer starts Note anywhere.** Windows 11 gives the key to its Snipping Tool before any app sees it, and Smart Snap 1.2 now takes it for an area snap in every program, Multi Screens included. **Alt+N** still starts Note anywhere.\n- **The handbook**, `Multi-Screens-Handbook-1.10.2.pdf`, with the Keys page to match.\n\n### Updating from 1.10.1\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- This installer over 1.10.1 on a working computer, silently with Windows' permission: installed in 4 seconds, Windows lists 1.10.2. The installed app has no Print Screen shortcut left in it.\n- Microsoft Defender finds nothing in the installer.\n\n",
+   "published_at": "2026-11-16T09:39:17Z",
+   "html_url": "https://github.com/Rady193/multi-screens/releases/tag/v1.10.2",
    "assets": [
     {
-     "name": "Multi-Screens-Handbook-1.10.1.pdf",
-     "size": 4276226,
-     "digest": "sha256:81424eb83272bab4d42682e98857c6318a062bb950c22f90893c0e1db9d30aa0",
-     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.1/Multi-Screens-Handbook-1.10.1.pdf"
+     "name": "Multi-Screens-Handbook-1.10.2.pdf",
+     "size": 4275499,
+     "digest": "sha256:aea16bcb0ef0e0d675dc884ea217e52ff5280c84650f3291615ebc092174a188",
+     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.2/Multi-Screens-Handbook-1.10.2.pdf"
     },
     {
-     "name": "Multi-Screens-Setup-1.10.1.exe",
-     "size": 81742049,
-     "digest": "sha256:113d34038b1921cb1e82b30bb5461a5490caad6cb99b1b034d95af95ec4a81fd",
-     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.1/Multi-Screens-Setup-1.10.1.exe"
+     "name": "Multi-Screens-Setup-1.10.2.exe",
+     "size": 81741815,
+     "digest": "sha256:7a86dc64dc17219804508e5ec90731dec5831b8ab0e9cda16fefc0b393bcd78f",
+     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.2/Multi-Screens-Setup-1.10.2.exe"
     }
    ]
   },
   "smart-snap": {
-   "tag_name": "v1.1.5",
-   "name": "Smart Snap 1.1.5",
-   "body": "Enter saves the comment, the comment box opens at once, Copy as picture in the bar, and sharper snaps.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Smart-Snap-Setup-1.1.5.exe` | 78.0 MB | `BDA944D3A875EB3C11729CBFC4620DE1E0E4A56040FDFA985C05A43451724378` |\n| `Smart-Snap-Handbook-1.1.5.pdf` | 3.6 MB | `EE0A9408B5769103EDFF092E91D7E2B1CB9A202A983031068F8CFDA19565D725` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Changed\n\n- **Enter saves the comment**; Shift + Enter starts a new line.\n- **The comment box opens the moment you let go** of the mouse (it waited about half a second for the picture before); the picture is taken meanwhile.\n- **Copy as picture in the bar**, beside Create PDF report: the whole report on the clipboard as one picture, with the title and name last typed in the report form.\n- **A narrow window**: the bar's shortcut labels make way first, then Copy as picture keeps only its icon, so the bar fits down to the smallest window.\n\n### Fixed\n\n- **A faint light edge around area snaps** (1.1.4): the selection, meant to be left out of the picture, was not, because Windows ignores that setting for a window not yet on screen. It is now set once the window shows.\n- **Slightly stretched snaps on a scaled display**: a 2560 × 1600 display at 150% came out 2562 × 1601, a little soft, because every display was captured at one shared size and Electron rounds a scaled size. Each display is now captured at its own exact size, and only the display being snapped.\n\n### Updating from 1.1.4\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- The packaged app on two displays (2560 × 1600 at 150% and 3440 × 1440), each covered by a test window of coded colours: a live area, a frozen area and a full-screen snap on each were exact, pixel for pixel, with nothing of the selection or the comment box in them.\n- With the real mouse and keyboard on both displays: a comment typed over two lines (Shift + Enter) and saved with Enter; the box appeared about 20 ms after the release.\n- Copy as picture, from the bar and from the report form; Create report.\n- Microsoft Defender finds nothing in the installer.\n\n",
-   "published_at": "2026-11-16T08:58:15Z",
-   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.1.5",
+   "tag_name": "v1.2.0",
+   "name": "Smart Snap 1.2.0",
+   "body": "Print Screen snaps an area, and a pin keeps the window on top.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Smart-Snap-Setup-1.2.0.exe` | 78.0 MB | `0F0067B2123725FCF3FE809EA075A1FC28386035A1ACE489F019B829F14CF6C8` |\n| `Smart-Snap-Handbook-1.2.0.pdf` | 3.6 MB | `F97B9327983889790E71621CC9F6A6700B4FD560B39C927A6D4BE245ABF14D96` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Added\n\n- **Print Screen snaps an area**, as Ctrl + Alt + S does, in every program. Windows 11 gives the key to its Snipping Tool first: turn off **Use the Print screen key to open screen capture** in Windows Settings > Accessibility > Keyboard. Smart Snap's Settings says when it is on and opens that page. A switch there leaves the key to Windows or another program.\n- **Keep on top**: the pin in the bar keeps the Smart Snap window above other programs until you click it again, and is remembered. The window is never in a snap: it steps aside while the picture is taken and comes back afterwards.\n\n### Changed\n\n- **The handbook**, `Smart-Snap-Handbook-1.2.0.pdf`, with Print Screen and the pin.\n\n### Updating from 1.1.5\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- From the source code in a test profile: Settings finds Windows' Print Screen setting on, and shows its notice; once it is off, the notice goes (the handbook's Settings picture). The switch gives the key back and takes it again. The pin sets and clears \"always on top\" and is remembered.\n- Pinned, with another program in front: a full-screen snap hides the window while it is taken, and it comes back, still on top.\n- 1.2.0 installed offers a newer version (the handbook's update picture). This installer over 1.1.5 on a working computer, Smart Snap quit from the tray first: installed in 5 seconds, Windows lists 1.2.0, and it starts in the tray again.\n- Microsoft Defender finds nothing in the installer.\n\n### Not tested\n\n- **Print Screen pressed on a keyboard**, and an area snap with the window pinned: while an area is being chosen, Smart Snap takes Esc and Enter for the whole system, so these were not driven on a computer in use. They take the same paths as Ctrl + Alt + S and the full-screen snap above.\n\n",
+   "published_at": "2026-11-16T09:40:20Z",
+   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.2.0",
    "assets": [
     {
-     "name": "Smart-Snap-Handbook-1.1.5.pdf",
-     "size": 3800343,
-     "digest": "sha256:ee0a9408b5769103edff092e91d7e2b1cb9a202a983031068f8cfda19565d725",
-     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.1.5/Smart-Snap-Handbook-1.1.5.pdf"
+     "name": "Smart-Snap-Handbook-1.2.0.pdf",
+     "size": 3787714,
+     "digest": "sha256:f97b9327983889790e71621cc9f6a6700b4fd560b39c927a6d4be245abf14d96",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.0/Smart-Snap-Handbook-1.2.0.pdf"
     },
     {
-     "name": "Smart-Snap-Setup-1.1.5.exe",
-     "size": 81747168,
-     "digest": "sha256:bda944d3a875eb3c11729cbfc4620de1e0e4a56040fdfa985c05a43451724378",
-     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.1.5/Smart-Snap-Setup-1.1.5.exe"
+     "name": "Smart-Snap-Setup-1.2.0.exe",
+     "size": 81748298,
+     "digest": "sha256:0f0067b2123725fcf3fe809ea075a1fc28386035a1ace489f019b829f14cf6c8",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.0/Smart-Snap-Setup-1.2.0.exe"
     }
    ]
   },
