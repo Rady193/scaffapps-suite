@@ -1,45 +1,45 @@
 {
- "generated": "2026-11-16T08:00:42.197Z",
+ "generated": "2026-11-16T09:03:02.523Z",
  "repos": {
   "multi-screens": {
-   "tag_name": "v1.10.0",
-   "name": "Multi Screens 1.10.0",
-   "body": "Shortcuts for the tools, Print Screen for Note anywhere, and window buttons that dim with the review screen.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Multi-Screens-Setup-1.10.0.exe` | 78.0 MB | `B8682BF13693EC4AA03F5926FEF132C34C1E0E0A199417290FD4622F37AC51D0` |\n| `Multi-Screens-Handbook-1.10.0.pdf` | 4.3 MB | `09F171D9AE5804504B5481FB742556028400B713DCB780D340DCF835CB11F30F` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Added\n\n- **Shortcuts for the tools**: **Alt+N** Note anywhere, **Alt+R** Review notes, **Alt+O** Find overflow, **Alt+S** Screenshot all. They also work while you are in a device screen, and with any keyboard layout. They wait while the review screen, an enlarged picture or a comment being written is open.\n- **The Print Screen key starts Note anywhere** while the Multi Screens window is in front. In every other program it does what it did before.\n\n### Fixed\n\n- **The window buttons** (minimise, maximise, close) dim with the review screen, an enlarged picture and Note anywhere, instead of staying bright on top of them.\n\n### Changed\n\n- **The handbook**, `Multi-Screens-Handbook-1.10.0.pdf`, with the shortcuts on the Keys page.\n\n### Updating from 1.9.0\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- Alt+N, R, O and S pressed on a keyboard (sent through Windows) in the interface and inside a device screen: each runs its tool; the page does not get them, other keys such as Alt+X still reach it.\n- Print Screen is claimed when the window gets the focus and given back when it loses it.\n- The window buttons in both appearances under the review screen, an enlarged picture and Note anywhere: the same colour as the page beside them, back to normal when each closes.\n- 1.9.0 installed offers this version (the handbook's update picture), and this installer over 1.9.0 as Update now runs it: installed in 7 seconds, Windows lists 1.10.0, and it opens.\n- Microsoft Defender finds nothing in the installer.\n\n### Not tested\n\n- **Print Screen with another screenshot program that also watches the key** (here Adobe Photoshop Express): both may answer it while Multi Screens is in front.\n\n",
-   "published_at": "2026-11-16T06:03:15Z",
-   "html_url": "https://github.com/Rady193/multi-screens/releases/tag/v1.10.0",
+   "tag_name": "v1.10.1",
+   "name": "Multi Screens 1.10.1",
+   "body": "Enter saves a note.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Multi-Screens-Setup-1.10.1.exe` | 78.0 MB | `113D34038B1921CB1E82B30BB5461A5490CAAD6CB99B1B034D95AF95EC4A81FD` |\n| `Multi-Screens-Handbook-1.10.1.pdf` | 4.1 MB | `81424EB83272BAB4D42682E98857C6318A062BB950C22F90893C0E1DB9D30AA0` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Changed\n\n- **Enter saves the note** being written; **Shift+Enter** starts a new line (Ctrl+Enter still saves too). The same in Smart Snap's comment box.\n- **The handbook**, `Multi-Screens-Handbook-1.10.1.pdf`, with Enter on the Notes and Keys pages.\n\n### Updating from 1.10.0\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- The packaged app, in a test profile with the handbook's sample site: a note typed over two lines with Shift+Enter stays open, and Enter saves it with both lines.\n- 1.10.0 installed offers this version (the handbook's update picture).\n- Microsoft Defender finds nothing in the installer.\n\n",
+   "published_at": "2026-11-16T09:02:45Z",
+   "html_url": "https://github.com/Rady193/multi-screens/releases/tag/v1.10.1",
    "assets": [
     {
-     "name": "Multi-Screens-Handbook-1.10.0.pdf",
-     "size": 4488947,
-     "digest": "sha256:09f171d9ae5804504b5481fb742556028400b713dcb780d340dcf835cb11f30f",
-     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.0/Multi-Screens-Handbook-1.10.0.pdf"
+     "name": "Multi-Screens-Handbook-1.10.1.pdf",
+     "size": 4276226,
+     "digest": "sha256:81424eb83272bab4d42682e98857c6318a062bb950c22f90893c0e1db9d30aa0",
+     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.1/Multi-Screens-Handbook-1.10.1.pdf"
     },
     {
-     "name": "Multi-Screens-Setup-1.10.0.exe",
-     "size": 81742233,
-     "digest": "sha256:b8682bf13693ec4aa03f5926fef132c34c1e0e0a199417290fd4622f37ac51d0",
-     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.0/Multi-Screens-Setup-1.10.0.exe"
+     "name": "Multi-Screens-Setup-1.10.1.exe",
+     "size": 81742049,
+     "digest": "sha256:113d34038b1921cb1e82b30bb5461a5490caad6cb99b1b034d95af95ec4a81fd",
+     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.1/Multi-Screens-Setup-1.10.1.exe"
     }
    ]
   },
   "smart-snap": {
-   "tag_name": "v1.1.4",
-   "name": "Smart Snap 1.1.4",
-   "body": "Write the comment right beside the area you snap, as in Multi Screens.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Smart-Snap-Setup-1.1.4.exe` | 78.0 MB | `E2EA98FF5E7166953EABE325E473952C785704CECBD0147D2D7D8E207510C15D` |\n| `Smart-Snap-Handbook-1.1.4.pdf` | 3.6 MB | `D23DB9BC79FDA6BF337BB6489ECE7DB8FDEF67C94AF03D9E2632F61847257B3A` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Changed\n\n- **The comment box**: once an area is chosen (dragged, a window clicked, or Enter), it stays outlined and a box beside it asks for the snap's comment. The picture is already taken, without the box or the dimming. **Save** or **Ctrl + Enter** keeps the snap with its comment; **Save and open** also opens Smart Snap on it, to mark a spot; **Discard** or **Esc** throws it away. It follows the dark or light appearance.\n- **Smart Snap stays out of the way** after an area snap saved from the box, so the next snap can follow at once; the snap waits in its list. Window and full-screen snaps open Smart Snap as before.\n- **The handbook**: its picture of an area snap shows the comment box.\n\n### Updating from 1.1.3\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- The packaged app, with the real mouse and keyboard, over a test window of known colours (keys sent only while the app under test had the keyboard): a live area with a typed comment and Ctrl + Enter was saved with that comment, in the window's own colours, with the box to the right of the area and Smart Snap staying hidden; a frozen area (after a delay) and Esc was discarded; Save and open saved the snap and opened Smart Snap on it.\n- Copy as picture and Create report as in 1.1.3.\n- Microsoft Defender finds nothing in the installer.\n\n",
-   "published_at": "2026-11-16T08:00:21Z",
-   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.1.4",
+   "tag_name": "v1.1.5",
+   "name": "Smart Snap 1.1.5",
+   "body": "Enter saves the comment, the comment box opens at once, Copy as picture in the bar, and sharper snaps.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Smart-Snap-Setup-1.1.5.exe` | 78.0 MB | `BDA944D3A875EB3C11729CBFC4620DE1E0E4A56040FDFA985C05A43451724378` |\n| `Smart-Snap-Handbook-1.1.5.pdf` | 3.6 MB | `EE0A9408B5769103EDFF092E91D7E2B1CB9A202A983031068F8CFDA19565D725` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Changed\n\n- **Enter saves the comment**; Shift + Enter starts a new line.\n- **The comment box opens the moment you let go** of the mouse (it waited about half a second for the picture before); the picture is taken meanwhile.\n- **Copy as picture in the bar**, beside Create PDF report: the whole report on the clipboard as one picture, with the title and name last typed in the report form.\n- **A narrow window**: the bar's shortcut labels make way first, then Copy as picture keeps only its icon, so the bar fits down to the smallest window.\n\n### Fixed\n\n- **A faint light edge around area snaps** (1.1.4): the selection, meant to be left out of the picture, was not, because Windows ignores that setting for a window not yet on screen. It is now set once the window shows.\n- **Slightly stretched snaps on a scaled display**: a 2560 × 1600 display at 150% came out 2562 × 1601, a little soft, because every display was captured at one shared size and Electron rounds a scaled size. Each display is now captured at its own exact size, and only the display being snapped.\n\n### Updating from 1.1.4\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- The packaged app on two displays (2560 × 1600 at 150% and 3440 × 1440), each covered by a test window of coded colours: a live area, a frozen area and a full-screen snap on each were exact, pixel for pixel, with nothing of the selection or the comment box in them.\n- With the real mouse and keyboard on both displays: a comment typed over two lines (Shift + Enter) and saved with Enter; the box appeared about 20 ms after the release.\n- Copy as picture, from the bar and from the report form; Create report.\n- Microsoft Defender finds nothing in the installer.\n\n",
+   "published_at": "2026-11-16T08:58:15Z",
+   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.1.5",
    "assets": [
     {
-     "name": "Smart-Snap-Handbook-1.1.4.pdf",
-     "size": 3791772,
-     "digest": "sha256:d23db9bc79fda6bf337bb6489ece7db8fdef67c94af03d9e2632f61847257b3a",
-     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.1.4/Smart-Snap-Handbook-1.1.4.pdf"
+     "name": "Smart-Snap-Handbook-1.1.5.pdf",
+     "size": 3800343,
+     "digest": "sha256:ee0a9408b5769103edff092e91d7e2b1cb9a202a983031068f8cfda19565d725",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.1.5/Smart-Snap-Handbook-1.1.5.pdf"
     },
     {
-     "name": "Smart-Snap-Setup-1.1.4.exe",
-     "size": 81745678,
-     "digest": "sha256:e2ea98ff5e7166953eabe325e473952c785704cecbd0147d2d7d8e207510c15d",
-     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.1.4/Smart-Snap-Setup-1.1.4.exe"
+     "name": "Smart-Snap-Setup-1.1.5.exe",
+     "size": 81747168,
+     "digest": "sha256:bda944d3a875eb3c11729cbfc4620de1e0e4a56040fdfa985c05a43451724378",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.1.5/Smart-Snap-Setup-1.1.5.exe"
     }
    ]
   },
