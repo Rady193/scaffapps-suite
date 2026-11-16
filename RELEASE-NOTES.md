@@ -9,7 +9,7 @@ Your favourite apps on the scaffold, and a smaller Suite card in the sidebar.
 | File | Size | SHA-256 |
 |---|---|---|
 | `SCAFFApps-Suite-Setup-1.0.3.exe` | 78.0 MB | `7ED13213358E0B8B62FD4EC78212EBD17FE0D11F10FAAB845CA4289424112EDD` |
-| `SCAFFApps-Suite-Handbook-1.0.3.pdf` | 3.8 MB | `53955224C01B4E353C68F6E271A066E473E4FABB46FBEE976DC8FFD9448BE092` |
+| `SCAFFApps-Suite-Handbook-1.0.3.pdf` | 4.1 MB | `F49F84124484EC2E2B59E39A36DB20FD8B67C0012B00F3FE387E10F9A5B80193` |
 
 For 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.
 
@@ -21,7 +21,7 @@ For 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask fo
 
 - **The scaffold**: each app stands in the middle of its bay, and the dashed places marked + are gone.
 - **The Suite's card in the sidebar** is smaller: the check-for-updates arrow sits beside the version, and the card says something only when an update for the Suite is ready or a check failed.
-- **The handbook**, `SCAFFApps-Suite-Handbook-1.0.3.pdf`, with favourites and its pictures retaken.
+- **The handbook**, `SCAFFApps-Suite-Handbook-1.0.3.pdf`, with favourites; its pictures retaken, mixed between the dark and light appearance.
 
 ### Updating from 1.0.2
 

@@ -50,7 +50,8 @@
       "shortcutName": "SCAFFApps Suite",
       "menuCategory": "SCAFFApps",
       "artifactName": "SCAFFApps-Suite-Setup-${version}.${ext}",
-      "include": "build/installer.nsh"
+      "include": "build/installer.nsh",
+      "differentialPackage": false
     }
   }
 }

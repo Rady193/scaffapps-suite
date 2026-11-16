@@ -1,5 +1,5 @@
-"""Makes the SCAFFApps Suite handbook: "SCAFFApps Suite Handbook.pdf" in the project folder, and a copy named for the
-release in release/ (SCAFFApps-Suite-Handbook-<version>.pdf).
+"""Makes the SCAFFApps Suite handbook: release/SCAFFApps-Suite-Handbook-<version>.pdf, its only copy (the name the
+SCAFFApps Suite looks for; attached to the GitHub release).
 
     python handbook\\build_handbook.py              retake the pictures, then print
     python handbook\\build_handbook.py --no-shots   print with the pictures as they are
@@ -90,9 +90,19 @@ def main_session(work, api):
         except TimeoutError:
             print("!! the Suite was still checking the stand-in")
         time.sleep(1)
+        # the pictures in both appearances, mixed through the handbook: first the dark ones
         view(w, "home")
         w.shot(IMG / "view-home.png")
         w.shot(IMG / "cards.png", kit_pad(w.rect("#cards"), 10))
+        view(w, "updates")
+        w.shot(IMG / "view-updates.png")
+        view(w, "settings")
+        w.shot(IMG / "view-settings.png")
+        # then the light ones
+        w.js("document.getElementById('tbTheme').click()")
+        time.sleep(0.8)
+        view(w, "home")
+        w.shot(IMG / "view-home-light.png")
         w.shot(IMG / "hero.png", kit_pad(w.rect(".hero"), 8))          # the scaffold and its tag
         w.shot(IMG / "rail-card.png", kit_pad(w.rect(".suite-card"), 10))
         # an app's ⋯ menu
@@ -103,16 +113,8 @@ def main_session(work, api):
         w.key("Escape", keycode=27)
         w.js("document.body.click()")
         time.sleep(0.4)
-        view(w, "updates")
-        w.shot(IMG / "view-updates.png")
         view(w, "books")
         w.shot(IMG / "view-books.png")
-        view(w, "settings")
-        w.shot(IMG / "view-settings.png")
-        w.js("document.getElementById('tbTheme').click()")
-        time.sleep(0.8)
-        view(w, "home")
-        w.shot(IMG / "view-home-light.png")
         w.js("document.getElementById('tbTheme').click()")
         w.close()
     finally:
@@ -170,19 +172,12 @@ def main():
     a = ap.parse_args()
     if not a.no_shots:
         shots(a.only)
-    # printed in handbook/build (never open anywhere), then copied: beside the source and, named for the release, in
-    # release/; a copy a PDF reader has open is left as it is, and said so
+    # printed in handbook/build (never open anywhere), then moved into release/, named for the release: the only
+    # copy (the name the SCAFFApps Suite looks for, attached to the GitHub release)
     (HERE / "build").mkdir(exist_ok=True)
     pdf = kit.print_pdf(HERE / "handbook.html", HERE / "build" / "SCAFFApps Suite Handbook.pdf",
                         HERE / "preview" if a.preview else None, chromium=a.chromium)
-    print(f"{pdf} ({pdf.stat().st_size // 1024} KB)")
-    (ROOT / "release").mkdir(exist_ok=True)
-    for target in (ROOT / "SCAFFApps Suite Handbook.pdf", ROOT / "release" / f"SCAFFApps-Suite-Handbook-{VERSION}.pdf"):
-        try:
-            shutil.copy2(pdf, target)
-            print(f"and {target}")
-        except PermissionError:
-            print(f"!! {target} is open in another program: close it and build again to replace it")
+    kit.to_release(pdf, ROOT / "release" / f"SCAFFApps-Suite-Handbook-{VERSION}.pdf")
     # release/ keeps only the newest handbook; the earlier ones stay on their GitHub releases
     newest = tuple(int(x) for x in VERSION.split("."))
     for old in (ROOT / "release").glob("SCAFFApps-Suite-Handbook-*.pdf"):
