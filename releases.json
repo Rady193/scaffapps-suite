@@ -1,24 +1,24 @@
 {
- "generated": "2026-11-16T05:34:13.195Z",
+ "generated": "2026-11-16T06:03:21.801Z",
  "repos": {
   "multi-screens": {
-   "tag_name": "v1.9.0",
-   "name": "Multi Screens 1.9.0",
-   "body": "Copy a review report as a picture, and the tools beside the device chips.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Multi-Screens-Setup-1.9.0.exe` | 78.0 MB | `3760F183E96A78C419F38E741542AE8DFF9E14B5AD0C078E3B3156A108595958` |\n| `Multi-Screens-Handbook-1.9.0.pdf` | 4.3 MB | `CAB1F4601B296F6B1368050D99A953CBD6D8C6DB924AD84A15D4310BCC1A0D77` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Added\n\n- **Copy as picture**, in the review screen: the whole report on the clipboard as one tall picture, to paste into a chat, an email or a document. It is the PDF's report on one page, twice as sharp as the screen. Nothing is saved and the notes stay, so the PDF can still be made afterwards.\n\n### Changed\n\n- **The tools beside the device chips**: Note anywhere, Review notes, Find overflow, Screenshot all and Clear site data move from the second bar to the devices' line.\n- **The handbook**, `Multi-Screens-Handbook-1.9.0.pdf`, with its pictures retaken from this version.\n\n### Updating from 1.8.2\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- Copy as picture from the source code, on a sample site with notes on two phones: a 1588 × 3152 picture on the clipboard in under a second, both notes still in the review screen. Create PDF report still saves the PDF and clears its notes.\n- The tools beside the device chips in the dark and light appearances, and as icons only on a narrower window.\n- 1.8.2 installed, then this installer over it as Update now runs it (silent, with Windows' permission): installed in 8 seconds, Windows lists 1.9.0, and it opens.\n- Microsoft Defender finds nothing in the installer.\n\n",
-   "published_at": "2026-11-16T05:34:01Z",
-   "html_url": "https://github.com/Rady193/multi-screens/releases/tag/v1.9.0",
+   "tag_name": "v1.10.0",
+   "name": "Multi Screens 1.10.0",
+   "body": "Shortcuts for the tools, Print Screen for Note anywhere, and window buttons that dim with the review screen.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Multi-Screens-Setup-1.10.0.exe` | 78.0 MB | `B8682BF13693EC4AA03F5926FEF132C34C1E0E0A199417290FD4622F37AC51D0` |\n| `Multi-Screens-Handbook-1.10.0.pdf` | 4.3 MB | `09F171D9AE5804504B5481FB742556028400B713DCB780D340DCF835CB11F30F` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Added\n\n- **Shortcuts for the tools**: **Alt+N** Note anywhere, **Alt+R** Review notes, **Alt+O** Find overflow, **Alt+S** Screenshot all. They also work while you are in a device screen, and with any keyboard layout. They wait while the review screen, an enlarged picture or a comment being written is open.\n- **The Print Screen key starts Note anywhere** while the Multi Screens window is in front. In every other program it does what it did before.\n\n### Fixed\n\n- **The window buttons** (minimise, maximise, close) dim with the review screen, an enlarged picture and Note anywhere, instead of staying bright on top of them.\n\n### Changed\n\n- **The handbook**, `Multi-Screens-Handbook-1.10.0.pdf`, with the shortcuts on the Keys page.\n\n### Updating from 1.9.0\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- Alt+N, R, O and S pressed on a keyboard (sent through Windows) in the interface and inside a device screen: each runs its tool; the page does not get them, other keys such as Alt+X still reach it.\n- Print Screen is claimed when the window gets the focus and given back when it loses it.\n- The window buttons in both appearances under the review screen, an enlarged picture and Note anywhere: the same colour as the page beside them, back to normal when each closes.\n- 1.9.0 installed offers this version (the handbook's update picture), and this installer over 1.9.0 as Update now runs it: installed in 7 seconds, Windows lists 1.10.0, and it opens.\n- Microsoft Defender finds nothing in the installer.\n\n### Not tested\n\n- **Print Screen with another screenshot program that also watches the key** (here Adobe Photoshop Express): both may answer it while Multi Screens is in front.\n\n",
+   "published_at": "2026-11-16T06:03:15Z",
+   "html_url": "https://github.com/Rady193/multi-screens/releases/tag/v1.10.0",
    "assets": [
     {
-     "name": "Multi-Screens-Handbook-1.9.0.pdf",
-     "size": 4479987,
-     "digest": "sha256:cab1f4601b296f6b1368050d99a953cbd6d8c6db924ad84a15d4310bcc1a0d77",
-     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.9.0/Multi-Screens-Handbook-1.9.0.pdf"
+     "name": "Multi-Screens-Handbook-1.10.0.pdf",
+     "size": 4488947,
+     "digest": "sha256:09f171d9ae5804504b5481fb742556028400b713dcb780d340dcf835cb11f30f",
+     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.0/Multi-Screens-Handbook-1.10.0.pdf"
     },
     {
-     "name": "Multi-Screens-Setup-1.9.0.exe",
-     "size": 81740384,
-     "digest": "sha256:3760f183e96a78c419f38e741542ae8dff9e14b5ad0c078e3b3156a108595958",
-     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.9.0/Multi-Screens-Setup-1.9.0.exe"
+     "name": "Multi-Screens-Setup-1.10.0.exe",
+     "size": 81742233,
+     "digest": "sha256:b8682bf13693ec4aa03f5926fef132c34c1e0e0a199417290fd4622f37ac51d0",
+     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.0/Multi-Screens-Setup-1.10.0.exe"
     }
    ]
   },
