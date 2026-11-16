@@ -1,5 +1,33 @@
 # Release notes
 
+## 1.0.4 — 16 November 2026
+
+The keyboard's place shown, as in every SCAFFApps app.
+
+### Downloads
+
+| File | Size | SHA-256 |
+|---|---|---|
+| `SCAFFApps-Suite-Setup-1.0.4.exe` | 71.1 MB | `DA5B13366853571591B5DB4A224FF751149589EBC2B513477AA9E25959962874` |
+| `SCAFFApps-Suite-Handbook-1.0.4.pdf` | 4.1 MB | `8FA3E965D608E22FF58B30EFBB1FC1E9BBC3EC4049A8D28DE61F4DC8259F0384` |
+
+For 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.
+
+### Changed
+
+- **Moving with Tab shows where you are**: a gold ring (purple in the light appearance) round the button, as in the other SCAFFApps apps; never on a click.
+- **The handbook**, `SCAFFApps-Suite-Handbook-1.0.4.pdf`: 1.0.3's pages and pictures, with the new version.
+
+### Updating from 1.0.3
+
+- **Update** on the Updates page, or the Suite's card in the sidebar. Windows asks for permission; the Suite closes, is updated and opens again.
+
+### Tested
+
+- The SCAFFApps design-language check: colours, scrollbars, the focus ring, the title bar, the appearance button, the tray menu and its Quit, the shared files.
+- Installed over 1.0.3 on a working computer the way it updates itself (silently, with Windows' permission): Windows lists 1.0.4 and the Suite opened again.
+- Microsoft Defender finds nothing in the installer.
+
 ## 1.0.3 — 16 November 2026
 
 Your favourite apps on the scaffold, and a smaller Suite card in the sidebar.
