@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T11:32:46.921Z",
+ "generated": "2026-11-16T12:57:59.688Z",
  "repos": {
   "multi-screens": {
    "tag_name": "v1.10.2",
@@ -23,83 +23,83 @@
    ]
   },
   "smart-snap": {
-   "tag_name": "v1.2.1",
-   "name": "Smart Snap 1.2.1",
-   "body": "The Print Screen key really snaps an area.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Smart-Snap-Setup-1.2.1.exe` | 78.0 MB | `DC4B20973834D8B7EC9C088FAA8DDA9FCEEF6990331B80ACD6C36BAA91BCCE0F` |\n| `Smart-Snap-Handbook-1.2.1.pdf` | 3.7 MB | `B4F260D24D2D965048EC1D16F2B810DEC3955FBE9F8D7C1BAF5EBE44E24F5003` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Fixed\n\n- **Print Screen snaps an area.** In 1.2.0 the key did nothing: Electron accepted it as a shortcut but never asked Windows for it. Smart Snap now claims the key from Windows itself, as other screenshot programs do, and gives it back when it quits. If another program has the key, Smart Snap asks for it again a few times (an older copy may still be closing after an update), and Settings names the key as taken.\n\n### Changed\n\n- **The handbook**, `Smart-Snap-Handbook-1.2.1.pdf`: 1.2.0's pages, which already describe Print Screen, with its pictures retaken, mixed between the dark and light appearance, and the SCAFFApps Suite on the back page as it is in 1.0.3.\n\n### Updating from 1.2.0 or 1.1.5\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- Installed on a working computer: Windows lists 1.2.1, and Smart Snap holds the Print Screen key (Windows gave it the key, and it keeps it while it runs).\n- Microsoft Defender finds nothing in the installer.\n\n### Not tested\n\n- **Print Screen pressed on a keyboard** was not driven by a test: it takes the same path as Ctrl + Alt + S.\n\n",
-   "published_at": "2026-11-16T10:58:00Z",
-   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.2.1",
+   "tag_name": "v1.2.2",
+   "name": "Smart Snap 1.2.2",
+   "body": "## 1.2.2 — 16 November 2026\r\n\r\nIn step with the other SCAFFApps apps: Quit Smart Snap, and the keyboard's place shown.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `Smart-Snap-Setup-1.2.2.exe` | 71.1 MB | `EEC01E2CFE05E2C8C01EFA4D155FEA135706917EAB77107B5D19F8C51E5729AF` |\r\n| `Smart-Snap-Handbook-1.2.2.pdf` | 3.7 MB | `56DA5995AE32F6DF91AAEC015021FD118C1AFA88065DCE6FD6F1B7525D8E4C2D` |\r\n\r\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### Changed\r\n\r\n- **The tray menu's last item is \"Quit Smart Snap\"**, the way Instant Share and the SCAFFApps Suite name themselves in theirs.\r\n- **Moving with Tab shows where you are**: a gold ring (purple in the light appearance) round the button or box, as in the other SCAFFApps apps; never on a click.\r\n- **The appearance button says what it does**: \"Switch to light appearance\" or \"Switch to dark appearance\".\r\n- **The handbook**, `Smart-Snap-Handbook-1.2.2.pdf`: 1.2.1's pages and pictures, with Quit Smart Snap.\r\n\r\n### Updating from 1.2.1 or earlier\r\n\r\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\r\n\r\n### Tested\r\n\r\n- The SCAFFApps design-language check: colours, scrollbars, the focus ring, the title bar, the appearance button, the tray menu and its Quit, the shared files.\r\n- Installed over 1.2.1 on a working computer the way the SCAFFApps Suite updates it (silently, with Windows' permission): Windows lists 1.2.2 and Smart Snap opened again.\r\n- Microsoft Defender finds nothing in the installer.\r\n",
+   "published_at": "2026-11-16T12:57:07Z",
+   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.2.2",
    "assets": [
     {
-     "name": "Smart-Snap-Handbook-1.2.1.pdf",
-     "size": 3900353,
-     "digest": "sha256:b4f260d24d2d965048ec1d16f2b810dec3955fbe9f8d7c1baf5ebe44e24f5003",
-     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.1/Smart-Snap-Handbook-1.2.1.pdf"
+     "name": "Smart-Snap-Handbook-1.2.2.pdf",
+     "size": 3900364,
+     "digest": "sha256:56da5995ae32f6df91aaec015021fd118c1afa88065dce6fd6f1b7525d8e4c2d",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.2/Smart-Snap-Handbook-1.2.2.pdf"
     },
     {
-     "name": "Smart-Snap-Setup-1.2.1.exe",
-     "size": 81749693,
-     "digest": "sha256:dc4b20973834d8b7ec9c088faa8dda9fceef6990331b80acd6c36baa91bcce0f",
-     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.1/Smart-Snap-Setup-1.2.1.exe"
+     "name": "Smart-Snap-Setup-1.2.2.exe",
+     "size": 74570724,
+     "digest": "sha256:eec01e2cfe05e2c8c01efa4d155fea135706917eab77107b5d19f8c51e5729af",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.2/Smart-Snap-Setup-1.2.2.exe"
     }
    ]
   },
   "instant-share": {
-   "tag_name": "v1.3.4",
-   "name": "Instant Share 1.3.4",
-   "body": "The handbook in the SCAFFApps style, Settings without scrolling, and scrollbars in the SCAFFApps colours.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Instant-Share-Setup-1.3.4.exe` | 13.8 MB | `82890597DE5D6762DE53BD75B28E3D3E60028ECA4D2B19877DED5697EB92EB75` |\n| `Instant-Share-1.3.4.apk` | 70 KB | `80327A7CCF54A3B0A9639D4DD0ED3C6D78CF5102B2E5542261DA36EA563B52C9` |\n| `instantshare.py` | 169 KB | `0B7C207D5BD63D2EA2C43C1BF869451E7720692F66D307DEA6F407A0FA780F23` |\n| `THIRD-PARTY-NOTICES.txt` | 143 KB | `0FEE3D7AD39B18F748FC67EE2ABDDF5CCF77E01668709074FEEEB52D522CD01C` |\n| `Instant-Share-Handbook-1.3.4.pdf` | 3.2 MB | `31DFF741B903A42F4ECE4A75624655BD5F19F77FDD11F9A00CF8CCC44FDF2BCA` |\n\nFor 64-bit Windows 10 and 11, and Android 10 and newer. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Changed\n\n- **The handbook**, `Instant-Share-Handbook-1.3.4.pdf`: 15 pages with pictures in the SCAFFApps brochure style, from setting up to privacy. The SCAFFApps Suite opens it from Handbooks. Replaced on 16 November 2026: its pictures retaken, mixed between the dark and light appearance, and the SCAFFApps Suite on the back page as it is in 1.0.3.\n- **Settings without scrolling**: on a laptop-wide window the sheet is wider, with its sections in two or three columns; phones keep one column.\n- **Scrollbars in the SCAFFApps style**: a slim purple bar on no track, wider under the pointer; never the grey Windows bar. Phones keep their own.\n- **\"Published by SCAFFApps - www.scaffapps.com\"** on the welcome page, the setup page, the page's footer, Settings > About, and the Android app's setup screen.\n\n### Updating\n\n- **Windows, from 1.3.0 to 1.3.3:** Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n- **Android:** install the new app over the old one, or **Update now** in the app.\n\n### Tested\n\n- Updated from 1.3.3 by the installed SCAFFApps Suite 1.0.1, against a stand-in for GitHub offering this installer: downloaded, checked against both published checksums, Windows' permission, installed in 10 seconds; Windows lists 1.3.4.\n- Microsoft Defender finds nothing in the installer or the Android app.\n- The handbook's pictures were taken from this version's own pages, with a made-up history and made-up devices.\n\n",
-   "published_at": "2026-11-15T23:39:07Z",
-   "html_url": "https://github.com/Rady193/instant-share/releases/tag/v1.3.4",
+   "tag_name": "v1.3.6",
+   "name": "Instant Share 1.3.6",
+   "body": "## 1.3.6 — 16 November 2026\r\n\r\nThe tray icon's menu in the SCAFFApps style, the same as Smart Snap's and the SCAFFApps Suite's.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `Instant-Share-Setup-1.3.6.exe` | 13.8 MB | `80C82D240274DE81253970FB8C5C45AAC93AA8465B3DFC1C521475E22C0A8CB8` |\r\n| `Instant-Share-1.3.6.apk` | 70 KB | `F721D016F621CD48350DCE9231927283232D90AD802F2A3730A9917D7B59EE0F` |\r\n| `instantshare.py` | 169 KB | `1B92FF7C493D3DF5868015D41DCE06BD1024C237D9A8002567CA61C5FDE4B3C9` |\r\n| `THIRD-PARTY-NOTICES.txt` | 143 KB | `DF09683971A8AC3754A73BA27E0A40FB2F14535DB0C554ADA30A2C62E85E6A07` |\r\n| `Instant-Share-Handbook-1.3.6.pdf` | 3.2 MB | `18C957EA76AC7904D24ED0B4501B5245784EDCE598996AFF4B61F144832129BE` |\r\n\r\nFor 64-bit Windows 10 and 11, and Android 10 and newer. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### Changed\r\n\r\n- **The tray icon's menu** is now the menu every SCAFFApps app has: taller rows, the whole row lit under the pointer, rounded corners, dark or light as Windows is. The same items as before: Open Instant Share, Add a device…, Start with Windows, Change setup… and Quit Instant Share. Instant Share draws it itself, still without any third-party code.\r\n- **No empty gap on the left**: the menu makes room for the tick only while **Start with Windows** is ticked.\r\n- **The handbook**, `Instant-Share-Handbook-1.3.6.pdf`: 1.3.4's pages and pictures, with the new version.\r\n\r\n(1.3.5 was made but not published: 1.3.6 is the same with the gap gone.)\r\n\r\n### Updating\r\n\r\n- **Windows, from 1.3.0 to 1.3.4:** Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\r\n- **Android:** nothing changed in the app but its version number; **Update now** in the app installs it, or keep 1.3.4.\r\n\r\n### Tested\r\n\r\n- From the source code in a test profile: the tray icon right-clicked the way Windows tells it, the menu drawn without the tick's room, **Start with Windows** ticked through it (into a test entry, not the real list) and the menu then drawn with it, Esc closes it, **Quit Instant Share** ends the program.\r\n- The menu next to Smart Snap's, both at 150 %, with an item ticked: the same size to the pixel (259 × 273 against Electron's 258 × 273), the same rows, colours, tick, text and hover, in the dark and the light appearance. Windows 11 gives it a slightly larger shadow.\r\n- Installed over 1.3.5 on a working computer the way the updates do it (silently, with Windows' permission): Windows lists 1.3.6, Instant Share opened again, and its tray menu opens without the gap and closes with Esc.\r\n- Microsoft Defender finds nothing in the installer or the Android app.\r\n",
+   "published_at": "2026-11-16T12:56:54Z",
+   "html_url": "https://github.com/Rady193/instant-share/releases/tag/v1.3.6",
    "assets": [
     {
-     "name": "Instant-Share-1.3.4.apk",
-     "size": 71212,
-     "digest": "sha256:80327a7ccf54a3b0a9639d4dd0ed3c6d78cf5102b2e5542261da36ea563b52c9",
-     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.4/Instant-Share-1.3.4.apk"
+     "name": "Instant-Share-1.3.6.apk",
+     "size": 71209,
+     "digest": "sha256:f721d016f621cd48350dce9231927283232d90ad802f2a3730a9917d7b59ee0f",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.6/Instant-Share-1.3.6.apk"
     },
     {
-     "name": "Instant-Share-Handbook-1.3.4.pdf",
+     "name": "Instant-Share-Handbook-1.3.6.pdf",
      "size": 3346949,
-     "digest": "sha256:31dff741b903a42f4ece4a75624655bd5f19f77fdd11f9a00cf8ccc44fdf2bca",
-     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.4/Instant-Share-Handbook-1.3.4.pdf"
+     "digest": "sha256:18c957ea76ac7904d24ed0b4501b5245784edce598996aff4b61f144832129be",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.6/Instant-Share-Handbook-1.3.6.pdf"
     },
     {
-     "name": "Instant-Share-Setup-1.3.4.exe",
-     "size": 14504002,
-     "digest": "sha256:82890597de5d6762de53bd75b28e3d3e60028eca4d2b19877ded5697eb92eb75",
-     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.4/Instant-Share-Setup-1.3.4.exe"
+     "name": "Instant-Share-Setup-1.3.6.exe",
+     "size": 14520666,
+     "digest": "sha256:80c82d240274de81253970fb8c5c45aac93aa8465b3dfc1c521475e22c0a8cb8",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.6/Instant-Share-Setup-1.3.6.exe"
     },
     {
      "name": "instantshare.py",
      "size": 172695,
-     "digest": "sha256:0b7c207d5bd63d2ea2c43c1bf869451e7720692f66d307dea6f407a0fa780f23",
-     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.4/instantshare.py"
+     "digest": "sha256:1b92ff7c493d3df5868015d41dce06bd1024c237d9a8002567ca61c5fde4b3c9",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.6/instantshare.py"
     },
     {
      "name": "THIRD-PARTY-NOTICES.txt",
      "size": 146552,
-     "digest": "sha256:0fee3d7ad39b18f748fc67ee2abddf5ccf77e01668709074feeeb52d522cd01c",
-     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.4/THIRD-PARTY-NOTICES.txt"
+     "digest": "sha256:df09683971a8ac3754a73ba27e0a40fb2f14535db0c554ada30a2c62e85e6a07",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.6/THIRD-PARTY-NOTICES.txt"
     }
    ]
   },
   "scaffapps-suite": {
-   "tag_name": "v1.0.3",
-   "name": "SCAFFApps Suite 1.0.3",
-   "body": "Your favourite apps on the scaffold, and a smaller Suite card in the sidebar.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `SCAFFApps-Suite-Setup-1.0.3.exe` | 78.0 MB | `7ED13213358E0B8B62FD4EC78212EBD17FE0D11F10FAAB845CA4289424112EDD` |\n| `SCAFFApps-Suite-Handbook-1.0.3.pdf` | 4.1 MB | `F49F84124484EC2E2B59E39A36DB20FD8B67C0012B00F3FE387E10F9A5B80193` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Added\n\n- **Favourites.** The star beside an installed app's **Open** makes it a favourite, or takes it off; the app's **⋯** menu has **Add to favourites** and **Remove from favourites** too, so it also works from **My apps**. The scaffold on the home view shows your favourites, one to a bay. Until you change one, every installed app is a favourite, so the scaffold looks as before; with none, a sign on the scaffold says how to put one there.\n\n### Changed\n\n- **The scaffold**: each app stands in the middle of its bay, and the dashed places marked + are gone.\n- **The Suite's card in the sidebar** is smaller: the check-for-updates arrow sits beside the version, and the card says something only when an update for the Suite is ready or a check failed.\n- **The handbook**, `SCAFFApps-Suite-Handbook-1.0.3.pdf`, with favourites; its pictures retaken, mixed between the dark and light appearance.\n\n### Updating from 1.0.2\n\n- **Update** on the Updates page, or the Suite's card in the sidebar. Windows asks for permission; the Suite closes, is updated and opens again.\n\n### Tested\n\n- From the source code in a test profile, in the dark and light appearance: the star and the ⋯ menu put each app on the scaffold and take it off, the choice is kept in the Suite's settings, the scaffold follows the catalogue's order, and with no favourites the sign shows. The sidebar card with an update ready.\n- Builds of these changes installed over 1.0.2 on a working computer, the way the Suite updates itself (silently, with Windows' permission): installed, and the Suite opened again.\n- Microsoft Defender finds nothing in the installer.\n- The handbook's pictures were taken from this version, in a test profile, with a stand-in for GitHub and a made-up list of installed apps.\n\n### Not tested\n\n- The Suite updating itself to 1.0.3 with its own **Update** button.\n\n",
-   "published_at": "2026-11-16T10:57:48Z",
-   "html_url": "https://github.com/Rady193/scaffapps-suite/releases/tag/v1.0.3",
+   "tag_name": "v1.0.4",
+   "name": "SCAFFApps Suite 1.0.4",
+   "body": "## 1.0.4 — 16 November 2026\r\n\r\nThe keyboard's place shown, as in every SCAFFApps app.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `SCAFFApps-Suite-Setup-1.0.4.exe` | 71.1 MB | `DA5B13366853571591B5DB4A224FF751149589EBC2B513477AA9E25959962874` |\r\n| `SCAFFApps-Suite-Handbook-1.0.4.pdf` | 4.1 MB | `8FA3E965D608E22FF58B30EFBB1FC1E9BBC3EC4049A8D28DE61F4DC8259F0384` |\r\n\r\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### Changed\r\n\r\n- **Moving with Tab shows where you are**: a gold ring (purple in the light appearance) round the button, as in the other SCAFFApps apps; never on a click.\r\n- **The handbook**, `SCAFFApps-Suite-Handbook-1.0.4.pdf`: 1.0.3's pages and pictures, with the new version.\r\n\r\n### Updating from 1.0.3\r\n\r\n- **Update** on the Updates page, or the Suite's card in the sidebar. Windows asks for permission; the Suite closes, is updated and opens again.\r\n\r\n### Tested\r\n\r\n- The SCAFFApps design-language check: colours, scrollbars, the focus ring, the title bar, the appearance button, the tray menu and its Quit, the shared files.\r\n- Installed over 1.0.3 on a working computer the way it updates itself (silently, with Windows' permission): Windows lists 1.0.4 and the Suite opened again.\r\n- Microsoft Defender finds nothing in the installer.\r\n",
+   "published_at": "2026-11-16T12:57:18Z",
+   "html_url": "https://github.com/Rady193/scaffapps-suite/releases/tag/v1.0.4",
    "assets": [
     {
-     "name": "SCAFFApps-Suite-Handbook-1.0.3.pdf",
+     "name": "SCAFFApps-Suite-Handbook-1.0.4.pdf",
      "size": 4284643,
-     "digest": "sha256:f49f84124484ec2e2b59e39a36db20fd8b67c0012b00f3fe387e10f9a5b80193",
-     "browser_download_url": "https://github.com/Rady193/scaffapps-suite/releases/download/v1.0.3/SCAFFApps-Suite-Handbook-1.0.3.pdf"
+     "digest": "sha256:8fa3e965d608e22ff58b30efbb1fc1e9bbc3ec4049a8d28de61f4dc8259f0384",
+     "browser_download_url": "https://github.com/Rady193/scaffapps-suite/releases/download/v1.0.4/SCAFFApps-Suite-Handbook-1.0.4.pdf"
     },
     {
-     "name": "SCAFFApps-Suite-Setup-1.0.3.exe",
-     "size": 81772484,
-     "digest": "sha256:7ed13213358e0b8b62fd4ec78212ebd17fe0d11f10faab845ca4289424112edd",
-     "browser_download_url": "https://github.com/Rady193/scaffapps-suite/releases/download/v1.0.3/SCAFFApps-Suite-Setup-1.0.3.exe"
+     "name": "SCAFFApps-Suite-Setup-1.0.4.exe",
+     "size": 74600109,
+     "digest": "sha256:da5b13366853571591b5db4a224ff751149589ebc2b513477aa9e25959962874",
+     "browser_download_url": "https://github.com/Rady193/scaffapps-suite/releases/download/v1.0.4/SCAFFApps-Suite-Setup-1.0.4.exe"
     }
    ]
   }
