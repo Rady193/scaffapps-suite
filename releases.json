@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T12:57:59.688Z",
+ "generated": "2026-11-16T18:10:39.937Z",
  "repos": {
   "multi-screens": {
    "tag_name": "v1.10.2",
@@ -23,23 +23,23 @@
    ]
   },
   "smart-snap": {
-   "tag_name": "v1.2.2",
-   "name": "Smart Snap 1.2.2",
-   "body": "## 1.2.2 — 16 November 2026\r\n\r\nIn step with the other SCAFFApps apps: Quit Smart Snap, and the keyboard's place shown.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `Smart-Snap-Setup-1.2.2.exe` | 71.1 MB | `EEC01E2CFE05E2C8C01EFA4D155FEA135706917EAB77107B5D19F8C51E5729AF` |\r\n| `Smart-Snap-Handbook-1.2.2.pdf` | 3.7 MB | `56DA5995AE32F6DF91AAEC015021FD118C1AFA88065DCE6FD6F1B7525D8E4C2D` |\r\n\r\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### Changed\r\n\r\n- **The tray menu's last item is \"Quit Smart Snap\"**, the way Instant Share and the SCAFFApps Suite name themselves in theirs.\r\n- **Moving with Tab shows where you are**: a gold ring (purple in the light appearance) round the button or box, as in the other SCAFFApps apps; never on a click.\r\n- **The appearance button says what it does**: \"Switch to light appearance\" or \"Switch to dark appearance\".\r\n- **The handbook**, `Smart-Snap-Handbook-1.2.2.pdf`: 1.2.1's pages and pictures, with Quit Smart Snap.\r\n\r\n### Updating from 1.2.1 or earlier\r\n\r\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\r\n\r\n### Tested\r\n\r\n- The SCAFFApps design-language check: colours, scrollbars, the focus ring, the title bar, the appearance button, the tray menu and its Quit, the shared files.\r\n- Installed over 1.2.1 on a working computer the way the SCAFFApps Suite updates it (silently, with Windows' permission): Windows lists 1.2.2 and Smart Snap opened again.\r\n- Microsoft Defender finds nothing in the installer.\r\n",
-   "published_at": "2026-11-16T12:57:07Z",
-   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.2.2",
+   "tag_name": "v1.2.3",
+   "name": "Smart Snap 1.2.3",
+   "body": "## 1.2.3 — 16 November 2026\r\n\r\nEnter copies the snap as a picture, and the report's pictures stay inside their cards.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `Smart-Snap-Setup-1.2.3.exe` | 71.1 MB | `9E7E89C985BF7A3AEB5744696F6E04979546C63C812B505056AD3FE34621312D` |\r\n| `Smart-Snap-Handbook-1.2.3.pdf` | 3.7 MB | `13914E3C59889D35EEF96178FFA1D8D8FC8B51AFC858655131888827603F66C2` |\r\n\r\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### New\r\n\r\n- **Enter in the comment box also copies the snap as a picture.** Enter (or Save) keeps the snap with its comment, as before, and puts that one snap on the clipboard as a picture: its part of the report alone (number, application, comment, screenshot, close-up and details), ready to paste into a chat, an email or a document. It is there about a second later; the next snap can start at once, and when several are saved one after another the last one saved is left on the clipboard. The box says so (\"Enter saves and copies it as a picture\"), and Smart Snap's window, when it is open, says \"Snap N copied as a picture\". **Save and open** and **Discard** copy nothing.\r\n\r\n### Fixed\r\n\r\n- **A wide screenshot no longer runs past the right edge of its card** in the PDF report and in Copy as picture. Screenshots are drawn at most 171 mm wide, the room inside the card; wide ones are about 6% smaller than in 1.2.2, small ones are unchanged.\r\n\r\n### Changed\r\n\r\n- **Copy as picture** in the bar and in the report form still copies the whole report, every snap.\r\n- **The handbook**, `Smart-Snap-Handbook-1.2.3.pdf`: Enter in the comment box, and the report pages and the comment box pictured again.\r\n\r\n### Updating from 1.2.2 or earlier\r\n\r\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\r\n\r\n### Tested\r\n\r\n- The one-snap picture and the whole report's picture drawn by Smart Snap's own report code from sample snaps: the one-snap picture holds that snap alone, as tall as its card; a snap removed before its turn copies nothing; the whole report copied twice in a row gives the same picture both times; the PDF's pages keep every screenshot inside its card.\r\n- Installed over 1.2.2 on a working computer the way the SCAFFApps Suite updates it (silently, with Windows' permission): Windows lists 1.2.3, Smart Snap opened again and holds the Print Screen key.\r\n- Microsoft Defender finds nothing in the installer.\r\n\r\n### Not tested\r\n\r\n- **Enter pressed in the comment box after a real snap** was not driven by a test (tests never snap the screen of the computer they run on); it saves through the same path as before, then draws the picture tested above.\r\n",
+   "published_at": "2026-11-16T18:09:25Z",
+   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.2.3",
    "assets": [
     {
-     "name": "Smart-Snap-Handbook-1.2.2.pdf",
-     "size": 3900364,
-     "digest": "sha256:56da5995ae32f6df91aaec015021fd118c1afa88065dce6fd6f1b7525d8e4c2d",
-     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.2/Smart-Snap-Handbook-1.2.2.pdf"
+     "name": "Smart-Snap-Handbook-1.2.3.pdf",
+     "size": 3887534,
+     "digest": "sha256:13914e3c59889d35eef96178ffa1d8d8fc8b51afc858655131888827603f66c2",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.3/Smart-Snap-Handbook-1.2.3.pdf"
     },
     {
-     "name": "Smart-Snap-Setup-1.2.2.exe",
-     "size": 74570724,
-     "digest": "sha256:eec01e2cfe05e2c8c01efa4d155fea135706917eab77107b5d19f8c51e5729af",
-     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.2/Smart-Snap-Setup-1.2.2.exe"
+     "name": "Smart-Snap-Setup-1.2.3.exe",
+     "size": 74572649,
+     "digest": "sha256:9e7e89c985bf7a3aeb5744696f6e04979546c63c812b505056ad3fe34621312d",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.3/Smart-Snap-Setup-1.2.3.exe"
     }
    ]
   },
