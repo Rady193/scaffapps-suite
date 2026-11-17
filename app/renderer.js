@@ -40,19 +40,42 @@ let view = 'home';
 const seen = {};            // messages and errors already shown as a toast
 
 // ------------------------------------------------------------------------------------------------ pieces
+// The window is drawn again on every report from main.js: several a second while an app downloads. A part of it is
+// rewritten only when its HTML changed. Rewriting it on every report restarted what moves in it: the card under the
+// pointer rose again and again (it shook), the spinner and the progress bar's stripes jumped back. The progress itself
+// is set in place (fillProgress), so the HTML stays the same while it moves.
+const drawn = new WeakMap();
+function setHTML(el, html) {
+  if (drawn.get(el) === html) return;
+  el.innerHTML = html;
+  drawn.set(el, html);
+}
+const part = (id) => ({ set html(v) { setHTML($(id), v); } });
 const installedApps = () => S.apps.filter((a) => a.installed);
 const updates = () => S.apps.filter((a) => a.update);
 const busyText = { downloading: 'Downloading', closing: 'Closing it', installing: 'Installing', opening: 'Opening it again', uninstalling: 'Uninstalling' };
 const STEPS = ['Download', 'Verify', 'Install', 'Open'];
 
+// An app's progress: the frame here; its words, numbers, bar and steps are set by fillProgress.
 function progHTML(a) {
-  const p = a.progress, b = a.busy;
-  const pct = b === 'downloading' && p && p.total ? Math.min(1, p.received / p.total) * .7 : b === 'closing' ? .74 : b === 'installing' ? .85 : b === 'opening' ? .97 : .05;
-  const step = b === 'downloading' ? 0 : b === 'closing' ? 1 : b === 'installing' ? 2 : 3;
-  const num = b === 'downloading' && p && p.total ? `${MB(p.received)} of ${MB(p.total)}` : b === 'installing' ? 'Windows asks once' : '';
-  return `<div class="prog"><div class="prog-top"><span>${busyText[b] || 'Working'}</span><span class="mono">${esc(num)}</span></div>
-    <div class="bar"><i style="width:${Math.round(pct * 100)}%"></i></div>
-    <div class="steps">${STEPS.map((s, i) => `<span class="${i < step ? 'done' : i === step ? 'now' : ''}">${s}</span>`).join('')}</div></div>`;
+  return `<div class="prog" data-prog="${a.id}"><div class="prog-top"><span class="what"></span><span class="mono num"></span></div>
+    <div class="bar"><i></i></div>
+    <div class="steps">${STEPS.map((s) => `<span>${s}</span>`).join('')}</div></div>`;
+}
+
+function fillProgress() {
+  for (const el of $$('.prog[data-prog]')) {
+    const a = S.apps.find((x) => x.id === el.dataset.prog);
+    if (!a || !a.busy) continue;
+    const p = a.progress, b = a.busy;
+    const pct = b === 'downloading' && p && p.total ? Math.min(1, p.received / p.total) * .7 : b === 'closing' ? .74 : b === 'installing' ? .85 : b === 'opening' ? .97 : .05;
+    const step = b === 'downloading' ? 0 : b === 'closing' ? 1 : b === 'installing' ? 2 : 3;
+    const num = b === 'downloading' && p && p.total ? `${MB(p.received)} of ${MB(p.total)}` : b === 'installing' ? 'Windows asks once' : '';
+    el.querySelector('.what').textContent = busyText[b] || 'Working';
+    el.querySelector('.num').textContent = num;
+    el.querySelector('.bar i').style.width = Math.round(pct * 100) + '%';
+    el.querySelectorAll('.steps span').forEach((x, i) => { x.className = i < step ? 'done' : i === step ? 'now' : ''; });
+  }
 }
 
 function chipHTML(a) {
@@ -90,7 +113,7 @@ function renderHome() {
   const name = S.user ? S.user.name.split(' ')[0] : '';
   const h = new Date().getHours();
   $('greet').textContent = h < 5 ? 'Working late' : h < 12 ? 'Good morning' : h < 18 ? 'Good afternoon' : 'Good evening';
-  $('greetName').innerHTML = name ? `, <span class="gold">${esc(name)}.</span>` : '.';
+  part('greetName').html = name ? `, <span class="gold">${esc(name)}.</span>` : '.';
   const inst = installedApps(), run = inst.filter((a) => a.running), up = updates(), busy = S.apps.find((a) => a.busy);
   const missing = S.apps.filter((a) => !a.installed);
   let s = inst.length ? `${word(inst.length)} app${inst.length > 1 ? 's' : ''} on this laptop, ${run.length ? word(run.length).toLowerCase() : 'none'} running. ` : 'No SCAFFApps apps on this laptop yet. ';
@@ -100,21 +123,21 @@ function renderHome() {
   else if (up.length) s += `<b>${word(up.length)} updates</b> are ready to install.`;
   else if (inst.length) s += 'Everything is up to date.';
   if (!busy && missing.length && missing.some((a) => a.latest && a.latest.installer)) s += ` ${missing.length === 1 ? esc(missing[0].name) + ' is' : word(missing.length) + ' more apps are'} one click away.`;
-  $('heroSub').innerHTML = s;
+  part('heroSub').html = s;
   let acts;
   if (busy) acts = `<button class="btn upd lg" disabled>${ico.spin}${busy.installed ? 'Updating' : 'Installing'} ${esc(busy.name)}</button>`;
   else if (up.length) acts = `<button class="btn upd lg" data-updall>${ico.down}${up.length === 1 ? 'Update ' + esc(up[0].name) : 'Update all (' + up.length + ')'}</button>`;
   else if (inst.length) acts = `<button class="btn lg done">${ico.check} All up to date</button>`;
   else acts = '';
   acts += `<button class="btn ghost lg" data-checkall ${S.checking ? 'disabled' : ''}>${S.checking ? ico.spin : ico.refresh}Check for updates</button>`;
-  $('heroActs').innerHTML = acts;
+  part('heroActs').html = acts;
 
   // each 64px icon in the middle of its bay: between the uprights (x 96, 206, 316, 426, 536, 6 wide) and between
   // the ledger above (y 140, 6 wide) and the deck board below (top at y 241)
   // the favourites stand on it, one to a bay; with none, a sign in the bays says how to put one there
   const X = [119, 229, 339, 449], Y = 160;
   const favs = inst.filter((a) => a.favourite).slice(0, X.length);
-  $('bays').innerHTML = favs.length ? favs.map((a, i) => `<g transform="translate(${X[i]},${Y})"><g class="bay ${a.running ? 'run' : ''}" data-app="${a.id}">
+  part('bays').html = favs.length ? favs.map((a, i) => `<g transform="translate(${X[i]},${Y})"><g class="bay ${a.running ? 'run' : ''}" data-app="${a.id}">
       <image href="${esc(a.icon)}" width="64" height="64"/><circle class="lamp" cx="61" cy="3" r="5"/>
       <title>${esc(a.name)} ${esc(a.installed.version)}</title></g></g>`).join('')
     : `<g class="fav-sign"><rect x="131" y="176" width="260" height="32" rx="9"/>
@@ -122,7 +145,7 @@ function renderHome() {
   const n = up.length, green = !n && !busy, now = new Date();
   const fill = green ? '#2fb673' : '#F5C518', ink = green ? '#ffffff' : '#2B1640';
   const l1 = busy ? 'UPDATING' : green ? 'ALL UP' : `${n} UPDATE${n > 1 ? 'S' : ''}`, l2 = busy ? '· · ·' : green ? 'TO DATE' : 'READY';
-  $('tag').innerHTML = `<rect x="17" y="152" width="70" height="88" rx="7" fill="${fill}"/>
+  part('tag').html = `<rect x="17" y="152" width="70" height="88" rx="7" fill="${fill}"/>
     <circle cx="52" cy="161" r="4" fill="var(--bg)" stroke="${ink}" stroke-opacity=".35"/>
     <rect x="17" y="170" width="70" height="15" fill="${ink}" fill-opacity=".14"/>
     <text x="52" y="181" text-anchor="middle" font-size="7.5" font-weight="700" fill="${ink}" letter-spacing=".9">SCAFFTAG</text>
@@ -132,18 +155,18 @@ function renderHome() {
 
   const q = $('q').value.trim().toLowerCase();
   const list = S.apps.filter((a) => !q || (a.name + ' ' + a.tagline).toLowerCase().includes(q));
-  $('cards').innerHTML = list.map(cardHTML).join('')
+  part('cards').html = list.map(cardHTML).join('')
     + (q ? '' : `<article class="card next"><div class="next-plus">+</div><h3>More apps are coming</h3>
       <p>New SCAFFApps apps appear here by themselves when they are released. Nothing is installed until you choose it.</p></article>`)
     + (q && !list.length ? `<div class="empty">No app called “${esc(q)}”.</div>` : '');
 
   const released = S.apps.filter((a) => a.latest).sort((x, y) => String(y.latest.published).localeCompare(String(x.latest.published)));
-  $('news').innerHTML = released.length ? released.slice(0, 3).map((a) => `<div class="tl-item"><span class="d mono">${esc(shortDay(a.latest.published))}</span><img src="${esc(a.icon)}" alt="">
+  part('news').html = released.length ? released.slice(0, 3).map((a) => `<div class="tl-item"><span class="d mono">${esc(shortDay(a.latest.published))}</span><img src="${esc(a.icon)}" alt="">
       <div><b>${esc(a.name)} ${esc(a.latest.version)}</b><p>${esc(intro(a.latest.notes))}</p></div>
       <button class="icon-btn" data-page="${a.id}" title="Release notes on GitHub">${ico.ext}</button></div>`).join('')
     : `<div class="empty-row">${S.checking ? 'Checking GitHub…' : 'Check for updates to see what is new.'}</div>`;
   const books = S.apps.filter((a) => a.latest && a.latest.handbook);
-  $('bookList').innerHTML = books.length ? books.map((a) => `<div class="bk-item"><img src="${esc(a.icon)}" alt=""><div><b>${esc(a.name)} Handbook</b><span>PDF · for ${esc(a.latest.version)}</span></div>
+  part('bookList').html = books.length ? books.map((a) => `<div class="bk-item"><img src="${esc(a.icon)}" alt=""><div><b>${esc(a.name)} Handbook</b><span>PDF · for ${esc(a.latest.version)}</span></div>
       <button class="icon-btn" data-book="${a.id}" title="Open the handbook">${ico.ext}</button></div>`).join('')
     : `<div class="empty-row">${S.checking ? 'Checking GitHub…' : 'The handbooks are on each app’s release page.'}</div>`;
 }
@@ -152,7 +175,7 @@ function renderHome() {
 function renderApps() {
   const inst = installedApps();
   $('appsSub').textContent = `${word(inst.length)} of ${word(S.apps.length).toLowerCase()} SCAFFApps apps on this laptop. Each keeps its own settings; the Suite installs, opens, updates and removes them.`;
-  $('rows').innerHTML = `<div class="row head"><span></span><span>APP</span><span>VERSION</span><span>STATE</span><span>WHERE</span><span></span><span></span></div>`
+  part('rows').html = `<div class="row head"><span></span><span>APP</span><span>VERSION</span><span>STATE</span><span>WHERE</span><span></span><span></span></div>`
     + S.apps.map((a) => `<div class="row" data-app="${a.id}"><img src="${esc(a.icon)}" alt=""><div><b>${esc(a.name)}</b><div class="sub">${esc(a.tagline).slice(0, 70)}${a.tagline.length > 70 ? '…' : ''}</div></div>
       <div>${a.installed ? `<span class="mono">${esc(a.installed.version)}</span>${a.update ? ` <span class="chip upd">${esc(a.latest.version)}</span>` : ''}` : '<span class="sub">—</span>'}</div>
       <div class="sub">${a.busy ? esc(busyText[a.busy] || '') : !a.installed ? 'Not installed' : a.running ? '<span class="dot run" style="display:inline-block;margin-right:6px"></span>Running' : 'Not running'}</div>
@@ -167,16 +190,16 @@ function renderUpdates() {
   const up = updates();
   $('upSub').textContent = S.checking ? 'Checking GitHub for newer versions…'
     : `${up.length ? `${word(up.length)} update${up.length > 1 ? 's' : ''} ready.` : 'Everything installed is up to date.'} Checked ${ago(S.checkedAt)}.`;
-  $('upActs').innerHTML = `<button class="btn ghost" data-checkall ${S.checking ? 'disabled' : ''}>${S.checking ? ico.spin : ico.refresh}Check now</button>`
+  part('upActs').html = `<button class="btn ghost" data-checkall ${S.checking ? 'disabled' : ''}>${S.checking ? ico.spin : ico.refresh}Check now</button>`
     + (up.length ? `<button class="btn upd" data-updall>${ico.down}Update all (${up.length})</button>` : '');
   const su = S.suite;
-  $('upSuite').innerHTML = `<div class="up-row"><img src="brand/icon.svg" alt=""><div><h4>SCAFFApps Suite ${su.update ? '<span class="chip upd">Update ready</span>' : su.latest ? `<span class="chip ok">${ico.check}Up to date</span>` : ''}</h4>
+  part('upSuite').html = `<div class="up-row"><img src="brand/icon.svg" alt=""><div><h4>SCAFFApps Suite ${su.update ? '<span class="chip upd">Update ready</span>' : su.latest ? `<span class="chip ok">${ico.check}Up to date</span>` : ''}</h4>
       <div class="meta">${su.update ? `<span class="mono">${esc(S.version)}</span><span class="arrow">→</span><span class="mono">${esc(su.latest.version)}</span> · released ${esc(day(su.latest.published))}`
         : `<span class="mono">${esc(S.version)}</span> · checks itself when it starts and once a day, and updates itself the same way it updates your apps.`}</div></div>
       <div class="r">${su.busy ? ico.spin : su.update ? `<button class="btn upd" data-suite-update>${ico.down}Update</button>` : ''}</div>
       ${su.update && su.latest ? `<div class="up-notes"><p>${esc(intro(su.latest.notes))}</p></div>` : ''}
       ${su.error ? `<div class="note bad">${esc(su.error)}</div>` : ''}</div>`;
-  $('upApps').innerHTML = S.apps.map((a) => {
+  part('upApps').html = S.apps.map((a) => {
     const l = a.latest;
     const head = !a.installed ? `<span class="chip dim">Not installed</span>` : a.update ? '<span class="chip upd">Update ready</span>' : l ? `<span class="chip ok">${ico.check}Up to date</span>` : '';
     const meta = a.installed && a.update ? `<span class="mono">${esc(a.installed.version)}</span><span class="arrow">→</span><span class="mono">${esc(l.version)}</span>${l.size ? ' · ' + MB(l.size) : ''} · released ${esc(day(l.published))}`
@@ -194,7 +217,7 @@ function renderUpdates() {
 // ------------------------------------------------------------------------------------------------ handbooks, settings, rail
 const COVERS = ['linear-gradient(150deg,#5B2C83,#45215F)', 'linear-gradient(150deg,#45215F,#2B1640)', 'linear-gradient(150deg,#5B2C83,#2B1640)'];
 function renderBooks() {
-  $('books').innerHTML = S.apps.map((a, i) => `<div class="book"><div class="cover" style="background:${COVERS[i % 3]}"><img src="${esc(a.icon)}" alt="">
+  part('books').html = S.apps.map((a, i) => `<div class="book"><div class="cover" style="background:${COVERS[i % 3]}"><img src="${esc(a.icon)}" alt="">
       <span class="k">SCAFFApps${a.latest ? ' · ' + esc(a.latest.version) : ''}</span><h3>${esc(a.name)}<span>Handbook</span></h3></div>
     <div class="foot"><span class="sub">${a.latest && a.latest.handbook ? 'PDF, with pictures' : 'Not published yet'}</span>
       <button class="btn" data-book="${a.id}" ${a.latest && a.latest.handbook ? '' : 'disabled'}>${ico.ext}Open</button></div></div>`).join('');
@@ -226,6 +249,7 @@ function renderRail() {
 function render() {
   if (!S) return;
   renderRail(); renderHome(); renderApps(); renderUpdates(); renderBooks(); renderSettings();
+  fillProgress();
   for (const a of S.apps) {                       // a finished install or a failure, said once
     if (a.message && seen['m' + a.id] !== a.message) { seen['m' + a.id] = a.message; if (seen.ready) toast(a.message, '', a.icon); }
     if (a.error && seen['e' + a.id] !== a.error) { seen['e' + a.id] = a.error; if (seen.ready) toast(`${a.name}`, a.error, a.icon); }

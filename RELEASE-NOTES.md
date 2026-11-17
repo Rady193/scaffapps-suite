@@ -1,5 +1,39 @@
 # Release notes
 
+## 1.0.5 — 18 November 2026
+
+An app's card no longer shakes while it updates.
+
+### Downloads
+
+| File | Size | SHA-256 |
+|---|---|---|
+| `SCAFFApps-Suite-Setup-1.0.5.exe` | 71.1 MB | `7858E5582898090C5E4FCE242F66C403A2CBC21A924ECAF6934C64C57B545765` |
+| `SCAFFApps-Suite-Handbook-1.0.5.pdf` | 4.1 MB | `12EDD85252E7F6E3376DFD813863BF720F51D2C4F69C20FB0852816B6FCFA1A0` |
+
+For 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.
+
+### Fixed
+
+- **An app's card no longer shakes while the app updates.** The Suite drew its whole window again on every report of the download, several a second, and each time the card under the pointer began its small rise again, so it shook; the progress bar's stripes and the spinner jumped back as well. Now a part of the window is drawn again only when it has changed, and the progress bar and its numbers move in place.
+
+### Changed
+
+- **The handbook**, `SCAFFApps-Suite-Handbook-1.0.5.pdf`: 1.0.4's pages and pictures, with the new version.
+
+### Updating from 1.0.4
+
+- **Update** on the Updates page, or the Suite's card in the sidebar. Windows asks for permission; the Suite closes, is updated and opens again.
+
+### Tested
+
+- The Suite's window in Edge, with stand-ins for the rest of the Suite, the pointer resting on Smart Snap's card while it downloads (40 progress reports, 60 ms apart): with 1.0.4's code the card was drawn anew on every report and moved between four heights, 1.2 pixels apart; with this version it is the same card throughout and does not move, while the bar goes from 0 to 70 % and the numbers count up to 71.1 MB of 71.1 MB.
+- The SCAFFApps design-language check passes. Microsoft Defender finds nothing in the installer.
+
+### Not tested
+
+- The packaged Suite was not started: a test copy would set itself to start with Windows, in place of the Suite installed on the computer. This installer over 1.0.4, and a real update watched through it.
+
 ## 1.0.4 — 16 November 2026
 
 The keyboard's place shown, as in every SCAFFApps app.
