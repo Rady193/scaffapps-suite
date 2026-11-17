@@ -1,45 +1,45 @@
 {
- "generated": "2026-11-17T20:38:41.022Z",
+ "generated": "2026-11-17T21:13:40.402Z",
  "repos": {
   "multi-screens": {
-   "tag_name": "v1.10.2",
-   "name": "Multi Screens 1.10.2",
-   "body": "The Print Screen key is left to Smart Snap.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Multi-Screens-Setup-1.10.2.exe` | 78.0 MB | `7A86DC64DC17219804508E5EC90731DEC5831B8AB0E9CDA16FEFC0B393BCD78F` |\n| `Multi-Screens-Handbook-1.10.2.pdf` | 4.6 MB | `0E68E147BE9B093CC66422ABF65C8AE5DACEF97E09547D7752DA4E7125A6BE50` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Changed\n\n- **Print Screen no longer starts Note anywhere.** Windows 11 gives the key to its Snipping Tool before any app sees it, and Smart Snap 1.2 now takes it for an area snap in every program, Multi Screens included. **Alt+N** still starts Note anywhere.\n- **The handbook**, `Multi-Screens-Handbook-1.10.2.pdf`, with the Keys page to match. Replaced the same day: its pictures retaken, mixed between the dark and light appearance, and the SCAFFApps Suite on the back page as it is in 1.0.3.\n\n### Updating from 1.10.1\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- This installer over 1.10.1 on a working computer, silently with Windows' permission: installed in 4 seconds, Windows lists 1.10.2. The installed app has no Print Screen shortcut left in it.\n- Microsoft Defender finds nothing in the installer.\n\n",
-   "published_at": "2026-11-16T09:39:17Z",
-   "html_url": "https://github.com/Rady193/multi-screens/releases/tag/v1.10.2",
+   "tag_name": "v1.10.3",
+   "name": "Multi Screens 1.10.3",
+   "body": "## 1.10.3 — 18 November 2026\n\nThe Page theme and Network lists in the SCAFFApps colours.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Multi-Screens-Setup-1.10.3.exe` | 71.1 MB | `117E7EB9784BF14D8B676C013852F487D8E27A1F2A7224B71291203C3537959A` |\n| `Multi-Screens-Handbook-1.10.3.pdf` | 4.6 MB | `354B1F658C65B9BA7D6EB09E8453AF996C60170C9332FD317E0AA8FF5CBBFA76` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Changed\n\n- **The Page theme and Network lists** open in the SCAFFApps colours: a card in the window's own colours, the chosen item in gold (purple in the light appearance) with a tick, the one under the pointer lit in grey, as in every SCAFFApps menu. It was the list Windows draws, in its own blue with a grey frame. The arrow keys, Enter and Esc work as before, and nothing beside the list moves. Smart Snap 1.3.1 has the same lists, from the same code.\n- **The handbook**, `Multi-Screens-Handbook-1.10.3.pdf`: 1.10.2's pages and pictures, with the new version.\n\n### Updating from 1.10.2 or earlier\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- The packaged program in a test profile: both lists are the new ones, as wide and as high as before; choosing Slow 4G sets the network and saves it, and after a restart the Network list shows Slow 4G again.\n- The window in Edge: both lists open in the dark and the light appearance, their words whole.\n- The SCAFFApps design-language check passes, the new shared files included. Microsoft Defender finds nothing in the installer.\n\n### Not tested\n\n- This installer over 1.10.2.\n",
+   "published_at": "2026-11-17T21:12:58Z",
+   "html_url": "https://github.com/Rady193/multi-screens/releases/tag/v1.10.3",
    "assets": [
     {
-     "name": "Multi-Screens-Handbook-1.10.2.pdf",
+     "name": "Multi-Screens-Handbook-1.10.3.pdf",
      "size": 4851873,
-     "digest": "sha256:0e68e147be9b093cc66422abf65c8ae5dacef97e09547d7752da4e7125a6be50",
-     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.2/Multi-Screens-Handbook-1.10.2.pdf"
+     "digest": "sha256:354b1f658c65b9ba7d6eb09e8453af996c60170c9332fd317e0aa8ff5cbbfa76",
+     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.3/Multi-Screens-Handbook-1.10.3.pdf"
     },
     {
-     "name": "Multi-Screens-Setup-1.10.2.exe",
-     "size": 81741815,
-     "digest": "sha256:7a86dc64dc17219804508e5ec90731dec5831b8ab0e9cda16fefc0b393bcd78f",
-     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.2/Multi-Screens-Setup-1.10.2.exe"
+     "name": "Multi-Screens-Setup-1.10.3.exe",
+     "size": 74570863,
+     "digest": "sha256:117e7eb9784bf14d8b676c013852f487d8e27a1f2a7224b71291203c3537959a",
+     "browser_download_url": "https://github.com/Rady193/multi-screens/releases/download/v1.10.3/Multi-Screens-Setup-1.10.3.exe"
     }
    ]
   },
   "smart-snap": {
-   "tag_name": "v1.3.0",
-   "name": "Smart Snap 1.3.0",
-   "body": "## 1.3.0 — 18 November 2026\n\nRecord a video of an area, a window or the whole screen: it remembers where it came from, as a snap does.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Smart-Snap-Setup-1.3.0.exe` | 71.1 MB | `827448D0B0A39CB46D895CE940F41FE996EE2D18AA5BB9A45BC0D7959DCA429A` |\n| `Smart-Snap-Handbook-1.3.0.pdf` | 4.3 MB | `5B86DE62A3B7B86F5E546BAF19461E4AFB27C0474EB89AAE55E327C670C9D500` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Added\n\n- **Record a video.** **Record** in the bar, **Ctrl + Alt + R** anywhere, or **Record a video** in the tray menu. The area is chosen as for an area snap: drag an area, click a window, or Enter for the whole display. A bar beside it offers **Computer sound** and **Microphone** (remembered for the next video), then **Start recording** (or Enter), which counts down three seconds. While it records, the area is outlined in red and the bar shows the time, with **Pause** / **Resume**, **Stop** and **Discard** (two clicks). The outline and the bar are never in the video, and the mouse goes through to your programs everywhere except on the bar. **Stop**, Ctrl + Alt + R again or **Stop recording** in the tray menu ends it.\n- **The comment box after a video**, as after an area snap: **Enter** (or **Save**) keeps the video with its comment and copies the video file to the clipboard, to paste into a chat, an email or a folder; **Save and open** opens Smart Snap on it; **Esc** (or **Discard**) throws it away, its file to the Recycle Bin.\n- **MP4 videos in a new Recordings folder** in the output folder (H.264 and AAC sound, at the area's own resolution, 30 frames a second), named after the application and the time. An area larger than 4096 × 2304 pixels is saved as WebM.\n- **A video is a snap**: in the list with its first picture and its length, and with the application, window, link and comment a snap has. It plays in Smart Snap's window, where **Copy video** and **Show in folder** take the place of Copy picture and Save as PNG; **Delete** moves its file to the Recycle Bin. In the PDF report (and Copy as picture) it is its first picture, with a play sign and its length, opening the video file; the details name the file and its sound.\n- **Quitting while recording** (from the tray, or for an update) saves the video first.\n\n### Changed\n\n- **The window opens 1400 pixels wide** where the screen allows (it was 1280), so the bar, with Record added, still shows every shortcut beside its button. In a narrower window the shortcuts leave the buttons first, as before, then the words of Copy as picture, then Record's word.\n- **The list is headed \"Snaps\"**, as it holds videos too.\n- **The handbook**, `Smart-Snap-Handbook-1.3.0.pdf`: a new chapter, Recording a video, with its pictures; the window's pictures retaken with Record in the bar; Ctrl + Alt + R and the Recordings folder where they belong. 13 pages.\n\n### Updating from 1.2.4 or earlier\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- From the source code in a test profile, at 150 % display scaling, recording only an area covered by a test pattern (red, green, blue and yellow quarters and a moving white bar): the MP4 (H.264 and AAC) is 932 × 512 pixels, the area's own size; its four quarters and all four corner pixels are the pattern's colours at the start, the middle and the end, so the area is cut exactly, and the video's first picture is the same.\n- Pause and Resume: 2 seconds, a 1-second pause, 2 more seconds give a video of about 4 seconds without the pause (3.7 to 4.0 s across the test runs). The bar's time, the comment box, the list and the player agree on its length.\n- Sound: with Computer sound alone and nothing playing, the sound runs the whole video (3.75 s of sound for 3.73 s of picture). With Chromium's test microphone as well, the two are mixed into one stereo track that carries the test tone.\n- Stop opens the comment box (\"Video 1 · 0:04 · Electron\"). Save and open keeps the comment and opens Smart Snap on the video, which plays; the list shows its first picture and length; Copy video and Show in folder are there, the mark bar is not.\n- The PDF report: the video's section with its first picture, the play sign, its length, the file name as a link and \"sound from the computer\"; the summary tags it \"Video 0:04\" and counts \"1 video\".\n- Discard while recording (two clicks): no snap, nothing in Recordings, no part file left behind.\n- Quit from the tray's code while recording: the video and its snap are saved, then Smart Snap closes.\n- Delete on a video that Smart Snap's player has open: its file goes to the Recycle Bin, and the window says so.\n- The window helper's new command puts a file on the clipboard as Explorer's Copy does (read back as a file list); it refuses a file that does not exist.\n- The area snap's selection page after the changes: the hint, dragging an area, the comment box, Enter saving, and clicking a window, as in 1.2.4.\n- The bar at every window width from 820 to 1400 pixels: nothing runs past its right edge; at 1400 every shortcut shows.\n- The packaged program starts as 1.3.0 with Record and its shortcut. Microsoft Defender finds nothing in the installer.\n\n### Not tested\n\n- **Recording driven by the real keyboard and mouse.** Enter and Ctrl + Alt + R were not pressed (the tests called the function the keys call), Enter in the comment box (which copies the video file) was not used, so as to leave the clipboard alone, and a real mouse going through the overlay to the program underneath, and back onto the bar, was not driven: tests do not take over the keyboard and mouse of a computer in use.\n- A real microphone, Windows' microphone setting switched off, more than one display, displays at different scales, an area larger than 4096 × 2304 (WebM), long recordings, and Windows 10 before version 2004 (where the outline and bar are hidden while recording).\n- This installer over 1.2.4.\n",
-   "published_at": "2026-11-17T20:38:19Z",
-   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.3.0",
+   "tag_name": "v1.3.1",
+   "name": "Smart Snap 1.3.1",
+   "body": "## 1.3.1 — 18 November 2026\n\nThe Delay list in the SCAFFApps colours.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Smart-Snap-Setup-1.3.1.exe` | 71.1 MB | `71374E2E84BEA01A080BC5A64599158288231CD343DB3E4D66454B9922E8C6BB` |\n| `Smart-Snap-Handbook-1.3.1.pdf` | 4.3 MB | `7CE19F006A4788C4A1C928C4A493D50888306ED74C494E9520FBA73157375274` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Changed\n\n- **The Delay list** opens in the SCAFFApps colours: a card in the window's own colours, the chosen item in gold (purple in the light appearance) with a tick, the one under the pointer lit in grey, as in every SCAFFApps menu. It was the list Windows draws, in its own blue with a grey frame. The arrow keys, Enter and Esc work as before, and nothing beside the list moves. Multi Screens 1.10.3 has the same lists, from the same code.\n- **The handbook**, `Smart-Snap-Handbook-1.3.1.pdf`: 1.3.0's pages and pictures, with the new version.\n\n### Updating from 1.3.0 or earlier\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- Smart Snap's window in Edge, with stand-ins for the rest of the app, in the dark and the light appearance: the list opens below its button; a click, the arrow keys with Enter, and a click on the word Delay all work; Esc and a click elsewhere close it without a change; a delay set by the app's own code shows on the button; the bar's last button ends where it did in 1.3.0 (1386 of 1400 pixels).\n- The packaged program in a test profile: version 1.3.1, the Delay list is the new one, and choosing 5 s sets the delay.\n- The SCAFFApps design-language check passes, the new shared files included. Microsoft Defender finds nothing in the installer.\n\n### Not tested\n\n- This installer over 1.3.0.\n",
+   "published_at": "2026-11-17T21:12:17Z",
+   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.3.1",
    "assets": [
     {
-     "name": "Smart-Snap-Handbook-1.3.0.pdf",
+     "name": "Smart-Snap-Handbook-1.3.1.pdf",
      "size": 4506464,
-     "digest": "sha256:5b86de62a3b7b86f5e546baf19461e4afb27c0474eb89aae55e327c670c9d500",
-     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.3.0/Smart-Snap-Handbook-1.3.0.pdf"
+     "digest": "sha256:7ce19f006a4788c4a1c928c4a493d50888306ed74c494e9520fba73157375274",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.3.1/Smart-Snap-Handbook-1.3.1.pdf"
     },
     {
-     "name": "Smart-Snap-Setup-1.3.0.exe",
-     "size": 74585681,
-     "digest": "sha256:827448d0b0a39cb46d895ce940f41fe996ee2d18aa5bb9a45bc0d7959dca429a",
-     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.3.0/Smart-Snap-Setup-1.3.0.exe"
+     "name": "Smart-Snap-Setup-1.3.1.exe",
+     "size": 74587035,
+     "digest": "sha256:71374e2e84bea01a080bc5a64599158288231cd343db3e4d66454b9922e8c6bb",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.3.1/Smart-Snap-Setup-1.3.1.exe"
     }
    ]
   },
@@ -83,23 +83,23 @@
    ]
   },
   "scaffapps-suite": {
-   "tag_name": "v1.0.4",
-   "name": "SCAFFApps Suite 1.0.4",
-   "body": "## 1.0.4 — 16 November 2026\r\n\r\nThe keyboard's place shown, as in every SCAFFApps app.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `SCAFFApps-Suite-Setup-1.0.4.exe` | 71.1 MB | `DA5B13366853571591B5DB4A224FF751149589EBC2B513477AA9E25959962874` |\r\n| `SCAFFApps-Suite-Handbook-1.0.4.pdf` | 4.1 MB | `8FA3E965D608E22FF58B30EFBB1FC1E9BBC3EC4049A8D28DE61F4DC8259F0384` |\r\n\r\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### Changed\r\n\r\n- **Moving with Tab shows where you are**: a gold ring (purple in the light appearance) round the button, as in the other SCAFFApps apps; never on a click.\r\n- **The handbook**, `SCAFFApps-Suite-Handbook-1.0.4.pdf`: 1.0.3's pages and pictures, with the new version.\r\n\r\n### Updating from 1.0.3\r\n\r\n- **Update** on the Updates page, or the Suite's card in the sidebar. Windows asks for permission; the Suite closes, is updated and opens again.\r\n\r\n### Tested\r\n\r\n- The SCAFFApps design-language check: colours, scrollbars, the focus ring, the title bar, the appearance button, the tray menu and its Quit, the shared files.\r\n- Installed over 1.0.3 on a working computer the way it updates itself (silently, with Windows' permission): Windows lists 1.0.4 and the Suite opened again.\r\n- Microsoft Defender finds nothing in the installer.\r\n",
-   "published_at": "2026-11-16T12:57:18Z",
-   "html_url": "https://github.com/Rady193/scaffapps-suite/releases/tag/v1.0.4",
+   "tag_name": "v1.0.5",
+   "name": "SCAFFApps Suite 1.0.5",
+   "body": "## 1.0.5 — 18 November 2026\n\nAn app's card no longer shakes while it updates.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `SCAFFApps-Suite-Setup-1.0.5.exe` | 71.1 MB | `7858E5582898090C5E4FCE242F66C403A2CBC21A924ECAF6934C64C57B545765` |\n| `SCAFFApps-Suite-Handbook-1.0.5.pdf` | 4.1 MB | `12EDD85252E7F6E3376DFD813863BF720F51D2C4F69C20FB0852816B6FCFA1A0` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Fixed\n\n- **An app's card no longer shakes while the app updates.** The Suite drew its whole window again on every report of the download, several a second, and each time the card under the pointer began its small rise again, so it shook; the progress bar's stripes and the spinner jumped back as well. Now a part of the window is drawn again only when it has changed, and the progress bar and its numbers move in place.\n\n### Changed\n\n- **The handbook**, `SCAFFApps-Suite-Handbook-1.0.5.pdf`: 1.0.4's pages and pictures, with the new version.\n\n### Updating from 1.0.4\n\n- **Update** on the Updates page, or the Suite's card in the sidebar. Windows asks for permission; the Suite closes, is updated and opens again.\n\n### Tested\n\n- The Suite's window in Edge, with stand-ins for the rest of the Suite, the pointer resting on Smart Snap's card while it downloads (40 progress reports, 60 ms apart): with 1.0.4's code the card was drawn anew on every report and moved between four heights, 1.2 pixels apart; with this version it is the same card throughout and does not move, while the bar goes from 0 to 70 % and the numbers count up to 71.1 MB of 71.1 MB.\n- The SCAFFApps design-language check passes. Microsoft Defender finds nothing in the installer.\n\n### Not tested\n\n- The packaged Suite was not started: a test copy would set itself to start with Windows, in place of the Suite installed on the computer. This installer over 1.0.4, and a real update watched through it.\n",
+   "published_at": "2026-11-17T21:13:22Z",
+   "html_url": "https://github.com/Rady193/scaffapps-suite/releases/tag/v1.0.5",
    "assets": [
     {
-     "name": "SCAFFApps-Suite-Handbook-1.0.4.pdf",
+     "name": "SCAFFApps-Suite-Handbook-1.0.5.pdf",
      "size": 4284643,
-     "digest": "sha256:8fa3e965d608e22ff58b30efbb1fc1e9bbc3ec4049a8d28de61f4dc8259f0384",
-     "browser_download_url": "https://github.com/Rady193/scaffapps-suite/releases/download/v1.0.4/SCAFFApps-Suite-Handbook-1.0.4.pdf"
+     "digest": "sha256:12edd85252e7f6e3376dfd813863bf720f51d2c4f69c20fb0852816b6fcfa1a0",
+     "browser_download_url": "https://github.com/Rady193/scaffapps-suite/releases/download/v1.0.5/SCAFFApps-Suite-Handbook-1.0.5.pdf"
     },
     {
-     "name": "SCAFFApps-Suite-Setup-1.0.4.exe",
-     "size": 74600109,
-     "digest": "sha256:da5b13366853571591b5db4a224ff751149589ebc2b513477aa9e25959962874",
-     "browser_download_url": "https://github.com/Rady193/scaffapps-suite/releases/download/v1.0.4/SCAFFApps-Suite-Setup-1.0.4.exe"
+     "name": "SCAFFApps-Suite-Setup-1.0.5.exe",
+     "size": 74599867,
+     "digest": "sha256:7858e5582898090c5e4fce242f66c403a2cbc21a924ecaf6934c64c57b545765",
+     "browser_download_url": "https://github.com/Rady193/scaffapps-suite/releases/download/v1.0.5/SCAFFApps-Suite-Setup-1.0.5.exe"
     }
    ]
   }
