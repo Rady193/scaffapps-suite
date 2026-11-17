@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T18:10:39.937Z",
+ "generated": "2026-11-17T10:32:38.704Z",
  "repos": {
   "multi-screens": {
    "tag_name": "v1.10.2",
@@ -23,23 +23,23 @@
    ]
   },
   "smart-snap": {
-   "tag_name": "v1.2.3",
-   "name": "Smart Snap 1.2.3",
-   "body": "## 1.2.3 — 16 November 2026\r\n\r\nEnter copies the snap as a picture, and the report's pictures stay inside their cards.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `Smart-Snap-Setup-1.2.3.exe` | 71.1 MB | `9E7E89C985BF7A3AEB5744696F6E04979546C63C812B505056AD3FE34621312D` |\r\n| `Smart-Snap-Handbook-1.2.3.pdf` | 3.7 MB | `13914E3C59889D35EEF96178FFA1D8D8FC8B51AFC858655131888827603F66C2` |\r\n\r\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### New\r\n\r\n- **Enter in the comment box also copies the snap as a picture.** Enter (or Save) keeps the snap with its comment, as before, and puts that one snap on the clipboard as a picture: its part of the report alone (number, application, comment, screenshot, close-up and details), ready to paste into a chat, an email or a document. It is there about a second later; the next snap can start at once, and when several are saved one after another the last one saved is left on the clipboard. The box says so (\"Enter saves and copies it as a picture\"), and Smart Snap's window, when it is open, says \"Snap N copied as a picture\". **Save and open** and **Discard** copy nothing.\r\n\r\n### Fixed\r\n\r\n- **A wide screenshot no longer runs past the right edge of its card** in the PDF report and in Copy as picture. Screenshots are drawn at most 171 mm wide, the room inside the card; wide ones are about 6% smaller than in 1.2.2, small ones are unchanged.\r\n\r\n### Changed\r\n\r\n- **Copy as picture** in the bar and in the report form still copies the whole report, every snap.\r\n- **The handbook**, `Smart-Snap-Handbook-1.2.3.pdf`: Enter in the comment box, and the report pages and the comment box pictured again.\r\n\r\n### Updating from 1.2.2 or earlier\r\n\r\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\r\n\r\n### Tested\r\n\r\n- The one-snap picture and the whole report's picture drawn by Smart Snap's own report code from sample snaps: the one-snap picture holds that snap alone, as tall as its card; a snap removed before its turn copies nothing; the whole report copied twice in a row gives the same picture both times; the PDF's pages keep every screenshot inside its card.\r\n- Installed over 1.2.2 on a working computer the way the SCAFFApps Suite updates it (silently, with Windows' permission): Windows lists 1.2.3, Smart Snap opened again and holds the Print Screen key.\r\n- Microsoft Defender finds nothing in the installer.\r\n\r\n### Not tested\r\n\r\n- **Enter pressed in the comment box after a real snap** was not driven by a test (tests never snap the screen of the computer they run on); it saves through the same path as before, then draws the picture tested above.\r\n",
-   "published_at": "2026-11-16T18:09:25Z",
-   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.2.3",
+   "tag_name": "v1.2.4",
+   "name": "Smart Snap 1.2.4",
+   "body": "## 1.2.4 — 17 November 2026\n\nEvery snapped program shows its own icon, the SCAFFApps apps' included.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Smart-Snap-Setup-1.2.4.exe` | 71.1 MB | `AA90E57D04595B32735DF82E70D2D06C758D3631F6B459EEF43D341E0FD7238E` |\n| `Smart-Snap-Handbook-1.2.4.pdf` | 3.7 MB | `25B04E8FD869F02367159FD1277AB965F9B1BE5D3BE087EEB8C4B040FAEA05C9` |\n\nFor 64-bit Windows 10 and 11. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### Fixed\n\n- **A snap of a program whose icon is stored as PNG pictures now shows that program's icon**, not Windows' plain program icon. This includes the SCAFFApps Suite, Smart Snap, Instant Share, Multi Screens and many other programs, and it applies in the list, in the snap's details, in the PDF report and in Copy as picture. Windows now draws the icon, as Explorer and the taskbar do, at 64 pixels so it stays sharp in print. The icon reader built into Smart Snap's engine (Chromium) cannot read PNG icons and handed back the plain one; it is now used only when Windows cannot answer. Snaps taken before this version keep the icon they were saved with.\n\n### Changed\n\n- **The handbook**, `Smart-Snap-Handbook-1.2.4.pdf`: 1.2.3's pages and pictures, unchanged.\n\n### Updating from 1.2.3 or earlier\n\n- Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n\n### Tested\n\n- Smart Snap's window helper asked for the icons of the SCAFFApps Suite, Smart Snap, Instant Share, Multi Screens, Microsoft Edge and Notepad: each came back as the program's own icon, 64 × 64 with transparent corners. A program without an icon (curl.exe) and a missing file answer with nothing.\n- Smart Snap's own code for this (starting the helper, asking it, the fallback), run in a signed-in Windows session: the SCAFFApps Suite, Smart Snap and Edge got their own icons. The first answer took about 0.3 s while the helper started, later ones about 2 ms. Programs without an icon still got Windows' plain icon from the fallback.\n- The cause, proven: the same SCAFFApps Suite program file was stamped once with bitmap icon pictures and once with PNG ones. Chromium's reader gave the real icon for the first and the plain one for the second.\n- Installed over 1.2.3 on a working computer the way the SCAFFApps Suite updates it (silently, with Windows' permission): Windows lists 1.2.4, Smart Snap opened again, and its window helper runs with the new icon command.\n- Microsoft Defender finds nothing in the installer.\n\n### Not tested\n\n- **A real snap of a SCAFFApps app after updating** was not driven by a test (tests never snap the screen of the computer they run on); it saves through the same code tested above.\n",
+   "published_at": "2026-11-17T10:29:54Z",
+   "html_url": "https://github.com/Rady193/smart-snap/releases/tag/v1.2.4",
    "assets": [
     {
-     "name": "Smart-Snap-Handbook-1.2.3.pdf",
+     "name": "Smart-Snap-Handbook-1.2.4.pdf",
      "size": 3887534,
-     "digest": "sha256:13914e3c59889d35eef96178ffa1d8d8fc8b51afc858655131888827603f66c2",
-     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.3/Smart-Snap-Handbook-1.2.3.pdf"
+     "digest": "sha256:25b04e8fd869f02367159fd1277ab965f9b1be5d3be087eeb8c4b040faea05c9",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.4/Smart-Snap-Handbook-1.2.4.pdf"
     },
     {
-     "name": "Smart-Snap-Setup-1.2.3.exe",
-     "size": 74572649,
-     "digest": "sha256:9e7e89c985bf7a3aeb5744696f6e04979546c63c812b505056ad3fe34621312d",
-     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.3/Smart-Snap-Setup-1.2.3.exe"
+     "name": "Smart-Snap-Setup-1.2.4.exe",
+     "size": 74572619,
+     "digest": "sha256:aa90e57d04595b32735df82e70d2d06c758d3631f6b459eef43d341e0fd7238e",
+     "browser_download_url": "https://github.com/Rady193/smart-snap/releases/download/v1.2.4/Smart-Snap-Setup-1.2.4.exe"
     }
    ]
   },
