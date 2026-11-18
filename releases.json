@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T12:14:33.780Z",
+ "generated": "2026-11-18T13:09:03.472Z",
  "repos": {
   "multi-screens": {
    "tag_name": "v1.10.3",
@@ -44,41 +44,41 @@
    ]
   },
   "instant-share": {
-   "tag_name": "v1.3.6",
-   "name": "Instant Share 1.3.6",
-   "body": "## 1.3.6 — 16 November 2026\r\n\r\nThe tray icon's menu in the SCAFFApps style, the same as Smart Snap's and the SCAFFApps Suite's.\r\n\r\n### Downloads\r\n\r\n| File | Size | SHA-256 |\r\n|---|---|---|\r\n| `Instant-Share-Setup-1.3.6.exe` | 13.8 MB | `80C82D240274DE81253970FB8C5C45AAC93AA8465B3DFC1C521475E22C0A8CB8` |\r\n| `Instant-Share-1.3.6.apk` | 70 KB | `F721D016F621CD48350DCE9231927283232D90AD802F2A3730A9917D7B59EE0F` |\r\n| `instantshare.py` | 169 KB | `1B92FF7C493D3DF5868015D41DCE06BD1024C237D9A8002567CA61C5FDE4B3C9` |\r\n| `THIRD-PARTY-NOTICES.txt` | 143 KB | `DF09683971A8AC3754A73BA27E0A40FB2F14535DB0C554ADA30A2C62E85E6A07` |\r\n| `Instant-Share-Handbook-1.3.6.pdf` | 3.2 MB | `18C957EA76AC7904D24ED0B4501B5245784EDCE598996AFF4B61F144832129BE` |\r\n\r\nFor 64-bit Windows 10 and 11, and Android 10 and newer. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\r\n\r\n### Changed\r\n\r\n- **The tray icon's menu** is now the menu every SCAFFApps app has: taller rows, the whole row lit under the pointer, rounded corners, dark or light as Windows is. The same items as before: Open Instant Share, Add a device…, Start with Windows, Change setup… and Quit Instant Share. Instant Share draws it itself, still without any third-party code.\r\n- **No empty gap on the left**: the menu makes room for the tick only while **Start with Windows** is ticked.\r\n- **The handbook**, `Instant-Share-Handbook-1.3.6.pdf`: 1.3.4's pages and pictures, with the new version.\r\n\r\n(1.3.5 was made but not published: 1.3.6 is the same with the gap gone.)\r\n\r\n### Updating\r\n\r\n- **Windows, from 1.3.0 to 1.3.4:** Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\r\n- **Android:** nothing changed in the app but its version number; **Update now** in the app installs it, or keep 1.3.4.\r\n\r\n### Tested\r\n\r\n- From the source code in a test profile: the tray icon right-clicked the way Windows tells it, the menu drawn without the tick's room, **Start with Windows** ticked through it (into a test entry, not the real list) and the menu then drawn with it, Esc closes it, **Quit Instant Share** ends the program.\r\n- The menu next to Smart Snap's, both at 150 %, with an item ticked: the same size to the pixel (259 × 273 against Electron's 258 × 273), the same rows, colours, tick, text and hover, in the dark and the light appearance. Windows 11 gives it a slightly larger shadow.\r\n- Installed over 1.3.5 on a working computer the way the updates do it (silently, with Windows' permission): Windows lists 1.3.6, Instant Share opened again, and its tray menu opens without the gap and closes with Esc.\r\n- Microsoft Defender finds nothing in the installer or the Android app.\r\n",
-   "published_at": "2026-11-16T12:56:54Z",
-   "html_url": "https://github.com/Rady193/instant-share/releases/tag/v1.3.6",
+   "tag_name": "v1.4.0",
+   "name": "Instant Share 1.4.0",
+   "body": "## 1.4.0 — 18 November 2026\n\n**Send later**: share even when the computer that keeps the history can't be reached; it goes by itself when it can.\n\n### Downloads\n\n| File | Size | SHA-256 |\n|---|---|---|\n| `Instant-Share-Setup-1.4.0.exe` | 13.9 MB | `3AE5D331308784C9CFB4693BCD4F776234DC6DC93BA12AB192DAEACD88B7539F` |\n| `Instant-Share-1.4.0.apk` | 82 KB | `00D826C21E8D2E8626EB996FD263653959C69102A19F5FB176BA633166DC6D88` |\n| `instantshare.py` | 183 KB | `5F57A0AC71062D3A288A908F7EF476DD8D78D5457C394E4B7B4E1DE5F8158BE4` |\n| `THIRD-PARTY-NOTICES.txt` | 143 KB | `8FF26BF1606907D85C4D91E93E6ECD255B7487CBEC3B77CAE06277308D5656A5` |\n| `Instant-Share-Handbook-1.4.0.pdf` | 3.4 MB | `C7DCA9482A523CF2FA13F72A590801E774EA05F12C018BECB5621634CA016E2F` |\n\nFor 64-bit Windows 10 and 11, and Android 10 and newer. Not code-signed, so Windows SmartScreen may ask for confirmation on first run.\n\n### New\n\n- **Send later.** Away from the office network, or with the computer that keeps the history asleep, share as usual: the red status says so, **Share** becomes **Send later**, and what you share waits on your own device. It goes by itself, oldest first, the moment that computer answers again, with who should see it as you chose; the Windows and Android apps send it even with their window closed, and say so in a notification.\n- **Waiting to send**, above the history: what waits on this device, with **Edit** (back into the editor; it stops waiting) and **Delete** (after a question: nobody has seen it).\n- **Write for later** on the apps' \"Can't reach…\" page: started while away, Windows and Android have a box of their own there, with a file, **To** (the devices as last seen) and the list of what waits. When the computer answers again while something is written there, the page says \"… answers again\" and keeps it, with **Share** and **Open the history**, instead of making way for the history.\n- **\"written 09:14\"** on items that waited: the others see when it was written, not only when it arrived.\n- **Never twice.** Each share carries its own id: one sent again after an answer was lost on the way is still kept once.\n- **Refused ones stay, with why** (too big, a kind of file it does not take, the history full), for **Try again**, Edit or Delete.\n\n### Changed\n\n- **The Android app's \"Can't reach…\" screen** no longer reloads itself every few seconds (which would lose what is written there): it asks quietly, and also looks for the computer on the Wi-Fi by its name, in case its address changed.\n- **The handbook**, `Instant-Share-Handbook-1.4.0.pdf`: a new chapter, \"Writing while away\" (16 pages), and every picture retaken.\n\n### Updating\n\n- **The computer that keeps the history first:** its page brings Send later to every device, and the \"written\" mark and the never-twice check come from it. A 1.4 app talking to a 1.3 computer still keeps what is written on its \"Can't reach…\" page and sends it, without them.\n- **Windows, from 1.3.0 to 1.3.6:** Settings > Updates > **Update now**, or **Update** in the SCAFFApps Suite.\n- **Android:** **Update now** in the app, or install the new app over the old one.\n- Browsers keep what waits too, but send it only while Instant Share's page is open in them.\n\n### Tested\n\n- In a browser against a real server: the network gone, shares kept (tried and failed, or kept at once when already known to be away), a photo for one device only, Edit, Delete; the network back: shared oldest first, once each, for the chosen device, marked \"written\" two hours earlier; a refused file kept with its reason; the same share sent again by hand not kept twice; the page on a phone-sized screen. No page errors.\n- The Windows app from the source, in a test profile against a server in its own process: the server stopped while the page was open (kept in the app's outbox folder, shared when it came back, the device list remembered); started while the server was away (the \"Can't reach…\" page, Write for later, **To** from the remembered devices); the server back with a draft on that page (\"answers again\", **Share**, on to the history, both shared, the first marked \"written\").\n- The packaged program from this installer's build, in a test profile: it starts on the \"Can't reach…\" page and keeps what is written there.\n- The Android app's \"Can't reach…\" page in a phone-sized browser, with a stand-in for the app: it keeps through the app, takes a share from another app, and goes on to the history by itself, or says \"answers again\" with a draft. The Android app itself was built and checked by Microsoft Defender, not run on a phone for this release.\n- Microsoft Defender finds nothing in the installer, the Android app or the handbook.\n",
+   "published_at": "2026-11-18T13:08:38Z",
+   "html_url": "https://github.com/Rady193/instant-share/releases/tag/v1.4.0",
    "assets": [
     {
-     "name": "Instant-Share-1.3.6.apk",
-     "size": 71209,
-     "digest": "sha256:f721d016f621cd48350dce9231927283232d90ad802f2a3730a9917d7b59ee0f",
-     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.6/Instant-Share-1.3.6.apk"
+     "name": "Instant-Share-1.4.0.apk",
+     "size": 83498,
+     "digest": "sha256:00d826c21e8d2e8626eb996fd263653959c69102a19f5fb176ba633166dc6d88",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.4.0/Instant-Share-1.4.0.apk"
     },
     {
-     "name": "Instant-Share-Handbook-1.3.6.pdf",
-     "size": 3346949,
-     "digest": "sha256:18c957ea76ac7904d24ed0b4501b5245784edce598996aff4b61f144832129be",
-     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.6/Instant-Share-Handbook-1.3.6.pdf"
+     "name": "Instant-Share-Handbook-1.4.0.pdf",
+     "size": 3603543,
+     "digest": "sha256:c7dca9482a523cf2fa13f72a590801e774ea05f12c018becb5621634ca016e2f",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.4.0/Instant-Share-Handbook-1.4.0.pdf"
     },
     {
-     "name": "Instant-Share-Setup-1.3.6.exe",
-     "size": 14520666,
-     "digest": "sha256:80c82d240274de81253970fb8c5c45aac93aa8465b3dfc1c521475e22c0a8cb8",
-     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.6/Instant-Share-Setup-1.3.6.exe"
+     "name": "Instant-Share-Setup-1.4.0.exe",
+     "size": 14547958,
+     "digest": "sha256:3ae5d331308784c9cfb4693bcd4f776234dc6dc93ba12ab192daeacd88b7539f",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.4.0/Instant-Share-Setup-1.4.0.exe"
     },
     {
      "name": "instantshare.py",
-     "size": 172695,
-     "digest": "sha256:1b92ff7c493d3df5868015d41dce06bd1024c237d9a8002567ca61c5fde4b3c9",
-     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.6/instantshare.py"
+     "size": 187491,
+     "digest": "sha256:5f57a0ac71062d3a288a908f7ef476dd8d78d5457c394e4b7b4e1de5f8158be4",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.4.0/instantshare.py"
     },
     {
      "name": "THIRD-PARTY-NOTICES.txt",
      "size": 146552,
-     "digest": "sha256:df09683971a8ac3754a73ba27e0a40fb2f14535db0c554ada30a2c62e85e6a07",
-     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.3.6/THIRD-PARTY-NOTICES.txt"
+     "digest": "sha256:8ff26bf1606907d85c4d91e93e6ecd255b7487cbec3b77cae06277308d5656a5",
+     "browser_download_url": "https://github.com/Rady193/instant-share/releases/download/v1.4.0/THIRD-PARTY-NOTICES.txt"
     }
    ]
   },
